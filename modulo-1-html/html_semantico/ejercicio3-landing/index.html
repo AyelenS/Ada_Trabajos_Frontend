@@ -1,0 +1,100 @@
+Crear la estructura HTML de una página personal (sin estilos) usando etiquetas semánticas:
+
+Un encabezado que tengan links de navegación:
+Sobre mí
+Mis Proyectos
+Contactame
+Una sección "Sobre mí" que tenga:
+Nombre
+Párrafo con breve descripción
+Una sección "Mis proyectos" que tenga:
+Título que diga "Mis proyectos"
+4 cards de proyectos con: imagen, título y descripción.
+Una sección "Contacto" que tenga
+Título que diga "Contactame"
+Datos de contacto que incluyan: email, telefono y página de linkedin (los datos no tienen que ser reales).
+Un pie de página que diga:
+Hecho con ❤️
+
+⚠️ Consideraciones:
+
+Analizar qué etiquetas semánticas corresponden en cada caso y cómo debería ser la estructura HTML (la descripción del ejercicio no indica cuál es exactamente).
+Se puede usar lorem ipsum para rellenar los textos.
+Las imágenes puede ser aleatorias (no tienen que estar relacionadas).
+Las imágenes pueden ser con ruta relativa o absoluta.
+Los links de navegación tienen que llegar a las respectivas secciones al ser clickeados.
+Poner clases a todos los elementos.
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Personal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navigation
+">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#sobre-mi">Sobre mí</a></li>
+                <li class="nav-item"><a href="#mis-proyectos">Mis Proyectos</a></li>
+                <li class="nav-item"><a href="#contacto">Contáctame</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section id="sobre-mi" class="about-section">
+            <h1 class="section-title">Sobre mí</h1>
+            <p class="name">Nombre: Juan Pérez</p>
+            <p class="description">Soy un apasionado de la programación y el desarrollo web. Me encanta aprender nuevas tecnologías y crear proyectos interesantes.</p>
+        </section>
+
+        <section id="mis-proyectos" class="projects-section">
+            <h2 class="section-title">Mis Proyectos</h2>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/150" alt="Proyecto 1" class="project-image">
+                <h3 class="project-title">Proyecto 1</h3>
+                <p class="project-description">Descripción breve del proyecto 1.</p>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/150" alt="Proyecto 2" class="project-image">
+                <h3 class="project-title">Proyecto 2</h3>
+                <p class="project-description">Descripción breve del proyecto 2.</p>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/150" alt="Proyecto 3" class="project-image">
+                <h3 class="project-title">Proyecto 3</h3>
+                <p class="project-description">Descripción breve del proyecto 3.</p>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/150" alt="Proyecto 4" class="project-image">
+                <h3 class="project-title">Proyecto 4</h3>
+                <p class="project-description">Descripción breve del proyecto 4.</p>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact-section">
+            <h2 class="section-title">Contáctame</h2>
+            <ul class="contact-info">
+                <li>Email: <a href="mailto:juanpe32@example.com.ar">juanpe32@example.com.ar</a></li>
+                    <li>Teléfono: <a href="tel:+1234567890">+123 456 7890</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/juanperez" target="_blank">linkedin.com/in/juanperez</a></li>
+            </ul>
+        </section>  
+    </main>
+    <footer class="site-footer">
+        <p>Hecho con ❤️</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+                    
