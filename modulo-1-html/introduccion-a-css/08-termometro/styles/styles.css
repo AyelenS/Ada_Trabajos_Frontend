@@ -1,0 +1,58 @@
+.temperature-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.temperature-list li {
+    padding: 5px;
+}
+
+.temperature-list li:nth-child(1) {
+    background-color: #0000FF; 
+}
+
+.temperature-list li:nth-child(2) {
+    background-color: #1A00E6;
+}
+
+.temperature-list li:nth-child(3) {
+    background-color: #3300CC;
+}
+
+.temperature-list li:nth-child(4) {
+    background-color: #4D00B3;
+}
+
+.temperature-list li:nth-child(5) {
+    background-color: #660099;
+}
+
+.temperature-list li:nth-child(6) {
+    background-color: #800080; 
+}
+
+.temperature-list li:nth-child(7) {
+    background-color: #990066;
+}
+
+.temperature-list li:nth-child(8) {
+    background-color: #B3004D;
+}
+
+.temperature-list li:nth-child(9) {
+    background-color: #CC0033;
+}
+
+.temperature-list li:nth-child(10) {
+    background-color: #E6001A;
+}
+
+.temperature-list li:nth-child(11) {
+    background-color: #FF0000; 
+}
+
+.temperature-list li:first-child strong,
+.temperature-list li:last-child strong {
+    font-weight: bold;
+}
+

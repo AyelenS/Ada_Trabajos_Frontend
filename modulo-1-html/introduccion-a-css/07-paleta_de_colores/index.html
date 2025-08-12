@@ -1,0 +1,63 @@
+<!--index.html debe tener:
+- Un título h1 que diga: Mis paletas
+- 3 paletas de colores, que consisten en:
+- Un título h2 con el nombre de la paleta (por ejemplo: Moderna)
+- Una lista desordenada con 5 ítems
+- Cada ítem debe tener como texto código del color, en el sistema correspondiente (por ejemplo, si es blanco y está en hexadecimal #FFFFFF)
+- Poner un tipografía distinta a la default.
+- Dar a los títulos un tamaño de fuente distinto al default.
+- Cada ítem debe de tener de color de fondo el color que representa (por ejemplo, si representa el color negro, tener de color de fondo dicho color).
+- Tener en cuenta el contraste, si el color de fondo es muy oscuro, poner un color de letra claro, y viceversa.
+- Los colores de la primera paleta deben estar en sistema hexadecimal, los de la segunda en sistema rgb y los de la tercera en sistema hsl.-->
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Paletas de Colores</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <h1>Mis paletas</h1>
+
+    <div class="palette">
+        <h2>Moderna (Hexadecimal)</h2>
+        <ul>
+            <li style="background-color: #2c3e50; color: #ffffff;">#2c3e50</li>
+            <li style="background-color: #e74c3c; color: #ffffff;">#e74c3c</li>
+            <li style="background-color: #ecf0f1; color: #000000;">#ecf0f1</li>
+            <li style="background-color: #3498db; color: #ffffff;">#3498db</li>
+            <li style="background-color: #2ecc71; color: #ffffff;">#2ecc71</li>
+        </ul>
+    </div>
+
+    <div class="palette">
+        <h2>Vibrante (RGB)</h2>
+        <ul>
+            <li style="background-color: rgb(255, 87, 34); color: #ffffff;">rgb(255, 87, 34)</li>
+            <li style="background-color: rgb(76, 175, 80); color: #ffffff;">rgb(76, 175, 80)</li>
+            <li style="background-color: rgb(33, 150, 243); color: #ffffff;">rgb(33, 150, 243)</li>
+            <li style="background-color: rgb(255, 235, 59); color: #000000;">rgb(255, 235, 59)</li>
+            <li style="background-color: rgb(156, 39, 176); color: #ffffff;">rgb(156, 39, 176)</li>
+        </ul>
+    </div>
+
+    <div class="palette">
+        <h2>Pastel (HSL)</h2>
+        <ul>
+            <li style="background-color: hsl(36, 100%, 80%); color: #000000;">hsl(36, 100%, 80%)</li>
+            <li style="background-color: hsl(197, 71%, 73%); color: #000000;">hsl(197, 71%, 73%)</li>
+            <li style="background-color: hsl(285, 49%, 78%); color: #000000;">hsl(285, 49%, 78%)</li>
+            <li style="background-color: hsl(9, 100%, 85%); color: #000000;">hsl(9, 100%, 85%)</li>
+            <li style="background-color: hsl(120, 40%, 80%); color: #000000;">hsl(120, 40%, 80%)</li>
+        </ul>
+    </div>
+
+</body>
+</html>

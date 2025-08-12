@@ -1,0 +1,23 @@
+body {
+font-family: 'Montserrat', sans-serif;
+text-align: center;
+background-color: #212121; 
+color: #FAFAFA; 
+}
+ h1 {
+font-size: 120px;
+font-weight: 900;
+}
+p {
+font-size: 48px;
+font-weight: 700;
+}
+.programadora {
+color: #ff5733; 
+}
+.pintora {
+color: #33c1ff; 
+}
+.guitarrista {
+color: #75ff33; 
+}

@@ -1,0 +1,65 @@
+body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+        padding: 20px;
+    }
+
+    h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        color: #2c3e50;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        font-size: 1.5em;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
+        color: white;
+    }
+
+    .manzana {
+        color: #e74c3c; 
+    }
+
+    .banana {
+        color: #f1c40f; 
+    }
+
+    .kiwi {
+        color: #27ae60; 
+    }
+
+    .naranja {
+        color: #e67e22; 
+    }
+
+    .fresa {
+        color: #ff4d6d; 
+    }
+
+    .uva {
+        color: #8e44ad; 
+    }
+
+    .pera {
+        color: #2ecc71; 
+    }
+
+    .cereza {
+        color: #c0392b; 
+    }
+
+    .mango {
+        color: #f39c12; 
+    }
+
+    .sandia {
+        color: #d35400; 
+    }
