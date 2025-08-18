@@ -1,0 +1,56 @@
+<!-- - Creá 5 barras de progreso usando un div dentro de otro Las barras deben tener 500px de ancho y 30px de alto 
+- La barra de fondo debe tener un color y la que indica el progreso otro 
+- Poner los siguientes progresos en cada barra: 10%, 25%, 50%, 75%, 90% 
+- Agregale tanto a la barra contenedora como a la de progreso un border-radius de 100px 
+- Agregarle a la barra contenedora un padding de 3px -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Barras de Progreso</title>
+  <style>
+    .barra-contenedora {
+      width: 500px;
+      height: 30px;
+      background-color: #ddd;
+      border-radius: 100px;
+      padding: 3px;
+      margin: 10px 0;
+    }
+
+    .barra-progreso {
+      height: 100%;
+      background-color: #4caf50;
+      border-radius: 100px;
+    }
+
+    .p10 { width: 10%; }
+    .p25 { width: 25%; }
+    .p50 { width: 50%; }
+    .p75 { width: 75%; }
+    .p90 { width: 90%; }
+  </style>
+</head>
+<body>
+  <div class="barra-contenedora">
+    <div class="barra-progreso p10"></div>
+  </div>
+
+  <div class="barra-contenedora">
+    <div class="barra-progreso p25"></div>
+  </div>
+
+  <div class="barra-contenedora">
+    <div class="barra-progreso p50"></div>
+  </div>
+
+  <div class="barra-contenedora">
+    <div class="barra-progreso p75"></div>
+  </div>
+
+  <div class="barra-contenedora">
+    <div class="barra-progreso p90"></div>
+  </div>
+</body>
+</html>

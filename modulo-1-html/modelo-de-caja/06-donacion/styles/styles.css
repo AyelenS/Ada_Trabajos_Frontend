@@ -1,0 +1,130 @@
+body {
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.page-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header-info h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0;
+}
+
+.header-info p {
+    font-size: 16px;
+    color: #718096;
+    margin: 5px 0 0;
+}
+
+.diamond-icon { margin: 0 8px; }
+
+.close-button {
+    background-color: #edf2f7;
+    color: #718096;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.close-button:hover { background-color: #e2e8f0; }
+
+
+.content-wrapper {
+    background-color: #f2f1ff; 
+    border-radius: 20px;
+    padding: 80px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.donate-widget {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(127, 95, 255, 0.1);
+    width: 100%;
+    max-width: 380px;
+    padding: 30px;
+    text-align: center;
+}
+
+.donate-message {
+    font-family: 'Roboto Mono', monospace; 
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 20px 0 30px;
+}
+
+.amount-options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.amount-button {
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+    color: #4a5568;
+    border-radius: 8px;
+    padding: 12px 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.amount-button:hover {
+    border-color: #7f5fff;
+    color: #7f5fff;
+}
+
+.amount-button.active {
+    background-color: #7f5fff; 
+    color: #ffffff;
+    border-color: #7f5fff;
+}
+
+.continue-button {
+    background-color: #7f5fff;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.continue-button:hover {
+    background-color: #6a4ada;
+    transform: translateY(-2px);
+}
