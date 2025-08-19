@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8 Layouts con HTML Semántico y Flexbox</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: #333;
+            color: #fff;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .layout-container {
+            border: 3px solid #fff;
+            height: 400px;
+            display: flex; 
+            flex-direction: column; 
+        }
+        
+        .layout-container header,
+        .layout-container nav,
+        .layout-container main,
+        .layout-container aside,
+        .layout-container footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        header { background-color: #d970ee; color: #333; }
+        nav { background-color: #9013FE; }
+        main { background-color: #ffffff; color: #333; }
+        aside { background-color: #f2d9ff; color: #333; }
+        footer { background-color: #c48cff; }
+
+        #layout1 main {
+            flex: 1; 
+        }
+
+        #layout2 main {
+            flex: 1; 
+        }
+
+        #layout3 .content-wrapper {
+            display: flex;
+            flex: 1; 
+        }
+        #layout3 aside { width: 100px; }
+        #layout3 main { flex: 1; }
+
+        #layout4 .content-wrapper {
+            display: flex;
+            flex: 1;
+        }
+        #layout4 main { flex: 1; }
+        #layout4 aside { width: 100px; }
+
+        #layout5 {
+            flex-direction: row; 
+        }
+        #layout5 aside { width: 100px; }
+        #layout5 .right-column {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        #layout5 main { flex: 1; }
+        
+        #layout6 {
+            flex-direction: row;
+        }
+        #layout6 .left-column {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        #layout6 main { flex: 1; }
+        #layout6 aside { width: 100px; }
+
+        #layout7 .content-wrapper {
+            display: flex;
+            flex: 1;
+        }
+        #layout7 aside { width: 100px; }
+        #layout7 main { flex: 1; }
+
+        #layout8 .content-wrapper {
+            display: flex;
+            flex: 1;
+        }
+        #layout8 main { flex: 1; }
+        #layout8 aside { width: 100px; }
+
+    </style>
+</head>
+<body>
+
+    <div id="layout1" class="layout-container">
+        <header>Header</header>
+        <main>Main Content</main>
+        <footer>Footer</footer>
+    </div>
+
+    <div id="layout2" class="layout-container">
+        <header>Header</header>
+        <nav>Navigation Bar</nav>
+        <main>Main Content</main>
+        <footer>Footer</footer>
+    </div>
+
+    <div id="layout3" class="layout-container">
+        <header>Header</header>
+        <div class="content-wrapper">
+            <aside>Left Panel</aside>
+            <main>Main Content</main>
+        </div>
+        <footer>Footer</footer>
+    </div>
+
+    <div id="layout4" class="layout-container">
+        <header>Header</header>
+        <div class="content-wrapper">
+            <main>Main Content</main>
+            <aside>Right Panel</aside>
+        </div>
+        <footer>Footer</footer>
+    </div>
+
+    <div id="layout5" class="layout-container">
+        <aside>Left Panel</aside>
+        <div class="right-column">
+            <header>Header</header>
+            <main>Main Content</main>
+            <footer>Footer</footer>
+        </div>
+    </div>
+
+    <div id="layout6" class="layout-container">
+        <div class="left-column">
+            <header>Header</header>
+            <main>Main Content</main>
+            <footer>Footer</footer>
+        </div>
+        <aside>Right Panel</aside>
+    </div>
+
+    <div id="layout7" class="layout-container">
+        <header>Header</header>
+        <nav>Navigation Bar</nav>
+        <div class="content-wrapper">
+            <aside>Left Panel</aside>
+            <main>Main Content</main>
+        </div>
+        <footer>Footer</footer>
+    </div>
+
+    <div id="layout8" class="layout-container">
+        <header>Header</header>
+        <nav>Navigation Bar</nav>
+        <div class="content-wrapper">
+            <main>Main Content</main>
+            <aside>Right Panel</aside>
+        </div>
+        <footer>Footer</footer>
+    </div>
+
+</body>
+</html>

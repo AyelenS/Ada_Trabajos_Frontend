@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Periódica con CSS Grid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --alkali-metal: #f0a369;
+            --alkaline-earth-metal: #f5d47e;
+            --lanthanide: #d9b8a0;
+            --actinide: #d9a0b8;
+            --transition-metal: #f08a8a;
+            --post-transition-metal: #a4c9c9;
+            --metalloid: #8ad4a2;
+            --nonmetal: #a2d48a;
+            --halogen: #a2a2d4;
+            --noble-gas: #b8a0d9;
+            --text-color: #111;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .periodic-table {
+            display: grid;
+            grid-template-columns: repeat(18, 1fr);
+            gap: 5px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .element {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            padding: 8px 4px;
+            text-align: center;
+            cursor: default;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, z-index 0s 0.1s;
+        }
+
+        .element:hover {
+            transform: scale(1.15);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            transition-delay: 0s;
+        }
+
+        .symbol {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .name {
+            font-size: 0.6rem;
+            color: var(--text-color);
+        }
+        
+        .placeholder {
+            border: none;
+        }
+
+        .alkali-metal { background-color: var(--alkali-metal); }
+        .alkaline-earth-metal { background-color: var(--alkaline-earth-metal); }
+        .lanthanide { background-color: var(--lanthanide); }
+        .actinide { background-color: var(--actinide); }
+        .transition-metal { background-color: var(--transition-metal); }
+        .post-transition-metal { background-color: var(--post-transition-metal); }
+        .metalloid { background-color: var(--metalloid); }
+        .nonmetal { background-color: var(--nonmetal); }
+        .halogen { background-color: var(--halogen); }
+        .noble-gas { background-color: var(--noble-gas); }
+        
+        .legend {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .legend-label {
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Tabla Periódica de los Elementos</h1>
+
+    <main class="periodic-table">
+        <article class="element nonmetal" style="grid-column: 1; grid-row: 1;">
+            <div class="symbol">H</div><div class="name">Hidrógeno</div>
+        </article>
+        <article class="element noble-gas" style="grid-column: 18; grid-row: 1;">
+            <div class="symbol">He</div><div class="name">Helio</div>
+        </article>
+
+
+        <article class="element alkali-metal" style="grid-column: 1; grid-row: 2;">
+            <div class="symbol">Li</div><div class="name">Litio</div>
+        </article>
+        <article class="element alkaline-earth-metal" style="grid-column: 2; grid-row: 2;">
+            <div class="symbol">Be</div><div class="name">Berilio</div>
+        </article>
+        <article class="element metalloid" style="grid-column: 13; grid-row: 2;">
+            <div class="symbol">B</div><div class="name">Boro</div>
+        </article>
+        <article class="element nonmetal" style="grid-column: 14; grid-row: 2;">
+            <div class="symbol">C</div><div class="name">Carbono</div>
+        </article>
+        <article class="element nonmetal" style="grid-column: 15; grid-row: 2;">
+            <div class="symbol">N</div><div class="name">Nitrógeno</div>
+        </article>
+        <article class="element nonmetal" style="grid-column: 16; grid-row: 2;">
+            <div class="symbol">O</div><div class="name">Oxígeno</div>
+        </article>
+        <article class="element halogen" style="grid-column: 17; grid-row: 2;">
+            <div class="symbol">F</div><div class="name">Flúor</div>
+        </article>
+        <article class="element noble-gas" style="grid-column: 18; grid-row: 2;">
+            <div class="symbol">Ne</div><div class="name">Neón</div>
+        </article>
+
+     
+        <article class="element alkali-metal" style="grid-column: 1; grid-row: 3;">
+            <div class="symbol">Na</div><div class="name">Sodio</div>
+        </article>
+        <article class="element alkaline-earth-metal" style="grid-column: 2; grid-row: 3;">
+            <div class="symbol">Mg</div><div class="name">Magnesio</div>
+        </article>
+        <article class="element post-transition-metal" style="grid-column: 13; grid-row: 3;">
+            <div class="symbol">Al</div><div class="name">Aluminio</div>
+        </article>
+        <article class="element metalloid" style="grid-column: 14; grid-row: 3;">
+            <div class="symbol">Si</div><div class="name">Silicio</div>
+        </article>
+        <article class="element nonmetal" style="grid-column: 15; grid-row: 3;">
+            <div class="symbol">P</div><div class="name">Fósforo</div>
+        </article>
+        <article class="element nonmetal" style="grid-column: 16; grid-row: 3;">
+            <div class="symbol">S</div><div class="name">Azufre</div>
+        </article>
+        <article class="element halogen" style="grid-column: 17; grid-row: 3;">
+            <div class="symbol">Cl</div><div class="name">Cloro</div>
+        </article>
+        <article class="element noble-gas" style="grid-column: 18; grid-row: 3;">
+            <div class="symbol">Ar</div><div class="name">Argón</div>
+        </article>
+
+       
+        <article class="element alkali-metal" style="grid-column: 1; grid-row: 4;"><div class="symbol">K</div><div class="name">Potasio</div></article>
+        <article class="element alkaline-earth-metal" style="grid-column: 2; grid-row: 4;"><div class="symbol">Ca</div><div class="name">Calcio</div></article>
+        <article class="element transition-metal" style="grid-column: 3; grid-row: 4;"><div class="symbol">Sc</div><div class="name">Escandio</div></article>
+        <article class="element transition-metal" style="grid-column: 4; grid-row: 4;"><div class="symbol">Ti</div><div class="name">Titanio</div></article>
+        <article class="element transition-metal" style="grid-column: 5; grid-row: 4;"><div class="symbol">V</div><div class="name">Vanadio</div></article>
+        <article class="element transition-metal" style="grid-column: 6; grid-row: 4;"><div class="symbol">Cr</div><div class="name">Cromo</div></article>
+        <article class="element transition-metal" style="grid-column: 7; grid-row: 4;"><div class="symbol">Mn</div><div class="name">Manganeso</div></article>
+        <article class="element transition-metal" style="grid-column: 8; grid-row: 4;"><div class="symbol">Fe</div><div class="name">Hierro</div></article>
+        <article class="element transition-metal" style="grid-column: 9; grid-row: 4;"><div class="symbol">Co</div><div class="name">Cobalto</div></article>
+        <article class="element transition-metal" style="grid-column: 10; grid-row: 4;"><div class="symbol">Ni</div><div class="name">Níquel</div></article>
+        <article class="element transition-metal" style="grid-column: 11; grid-row: 4;"><div class="symbol">Cu</div><div class="name">Cobre</div></article>
+        <article class="element transition-metal" style="grid-column: 12; grid-row: 4;"><div class="symbol">Zn</div><div class="name">Zinc</div></article>
+        <article class="element post-transition-metal" style="grid-column: 13; grid-row: 4;"><div class="symbol">Ga</div><div class="name">Galio</div></article>
+        <article class="element metalloid" style="grid-column: 14; grid-row: 4;"><div class="symbol">Ge</div><div class="name">Germanio</div></article>
+        <article class="element metalloid" style="grid-column: 15; grid-row: 4;"><div class="symbol">As</div><div class="name">Arsénico</div></article>
+        <article class="element nonmetal" style="grid-column: 16; grid-row: 4;"><div class="symbol">Se</div><div class="name">Selenio</div></article>
+        <article class="element halogen" style="grid-column: 17; grid-row: 4;"><div class="symbol">Br</div><div class="name">Bromo</div></article>
+        <article class="element noble-gas" style="grid-column: 18; grid-row: 4;"><div class="symbol">Kr</div><div class="name">Kriptón</div></article>
+
+        
+        <article class="element alkali-metal" style="grid-column: 1; grid-row: 5;"><div class="symbol">Rb</div><div class="name">Rubidio</div></article>
+        <article class="element alkaline-earth-metal" style="grid-column: 2; grid-row: 5;"><div class="symbol">Sr</div><div class="name">Estroncio</div></article>
+        <article class="element transition-metal" style="grid-column: 3; grid-row: 5;"><div class="symbol">Y</div><div class="name">Itrio</div></article>
+        <article class="element transition-metal" style="grid-column: 4; grid-row: 5;"><div class="symbol">Zr</div><div class="name">Zirconio</div></article>
+        <article class="element transition-metal" style="grid-column: 5; grid-row: 5;"><div class="symbol">Nb</div><div class="name">Niobio</div></article>
+        <article class="element transition-metal" style="grid-column: 6; grid-row: 5;"><div class="symbol">Mo</div><div class="name">Molibdeno</div></article>
+        <article class="element transition-metal" style="grid-column: 7; grid-row: 5;"><div class="symbol">Tc</div><div class="name">Tecnecio</div></article>
+        <article class="element transition-metal" style="grid-column: 8; grid-row: 5;"><div class="symbol">Ru</div><div class="name">Rutenio</div></article>
+        <article class="element transition-metal" style="grid-column: 9; grid-row: 5;"><div class="symbol">Rh</div><div class="name">Rodio</div></article>
+        <article class="element transition-metal" style="grid-column: 10; grid-row: 5;"><div class="symbol">Pd</div><div class="name">Paladio</div></article>
+        <article class="element transition-metal" style="grid-column: 11; grid-row: 5;"><div class="symbol">Ag</div><div class="name">Plata</div></article>
+        <article class="element transition-metal" style="grid-column: 12; grid-row: 5;"><div class="symbol">Cd</div><div class="name">Cadmio</div></article>
+        <article class="element post-transition-metal" style="grid-column: 13; grid-row: 5;"><div class="symbol">In</div><div class="name">Indio</div></article>
+        <article class="element post-transition-metal" style="grid-column: 14; grid-row: 5;"><div class="symbol">Sn</div><div class="name">Estaño</div></article>
+        <article class="element metalloid" style="grid-column: 15; grid-row: 5;"><div class="symbol">Sb</div><div class="name">Antimonio</div></article>
+        <article class="element metalloid" style="grid-column: 16; grid-row: 5;"><div class="symbol">Te</div><div class="name">Telurio</div></article>
+        <article class="element halogen" style="grid-column: 17; grid-row: 5;"><div class="symbol">I</div><div class="name">Yodo</div></article>
+        <article class="element noble-gas" style="grid-column: 18; grid-row: 5;"><div class="symbol">Xe</div><div class="name">Xenón</div></article>
+
+       
+        <article class="element alkali-metal" style="grid-column: 1; grid-row: 6;"><div class="symbol">Cs</div><div class="name">Cesio</div></article>
+        <article class="element alkaline-earth-metal" style="grid-column: 2; grid-row: 6;"><div class="symbol">Ba</div><div class="name">Bario</div></article>
+        <div class="element lanthanide placeholder" style="grid-column: 3; grid-row: 6;"></div>
+        <article class="element transition-metal" style="grid-column: 4; grid-row: 6;"><div class="symbol">Hf</div><div class="name">Hafnio</div></article>
+        <article class="element transition-metal" style="grid-column: 5; grid-row: 6;"><div class="symbol">Ta</div><div class="name">Tantalio</div></article>
+        <article class="element transition-metal" style="grid-column: 6; grid-row: 6;"><div class="symbol">W</div><div class="name">Wolframio</div></article>
+        <article class="element transition-metal" style="grid-column: 7; grid-row: 6;"><div class="symbol">Re</div><div class="name">Renio</div></article>
+        <article class="element transition-metal" style="grid-column: 8; grid-row: 6;"><div class="symbol">Os</div><div class="name">Osmio</div></article>
+        <article class="element transition-metal" style="grid-column: 9; grid-row: 6;"><div class="symbol">Ir</div><div class="name">Iridio</div></article>
+        <article class="element transition-metal" style="grid-column: 10; grid-row: 6;"><div class="symbol">Pt</div><div class="name">Platino</div></article>
+        <article class="element transition-metal" style="grid-column: 11; grid-row: 6;"><div class="symbol">Au</div><div class="name">Oro</div></article>
+        <article class="element transition-metal" style="grid-column: 12; grid-row: 6;"><div class="symbol">Hg</div><div class="name">Mercurio</div></article>
+        <article class="element post-transition-metal" style="grid-column: 13; grid-row: 6;"><div class="symbol">Tl</div><div class="name">Talio</div></article>
+        <article class="element post-transition-metal" style="grid-column: 14; grid-row: 6;"><div class="symbol">Pb</div><div class="name">Plomo</div></article>
+        <article class="element post-transition-metal" style="grid-column: 15; grid-row: 6;"><div class="symbol">Bi</div><div class="name">Bismuto</div></article>
+        <article class="element metalloid" style="grid-column: 16; grid-row: 6;"><div class="symbol">Po</div><div class="name">Polonio</div></article>
+        <article class="element halogen" style="grid-column: 17; grid-row: 6;"><div class="symbol">At</div><div class="name">Astato</div></article>
+        <article class="element noble-gas" style="grid-column: 18; grid-row: 6;"><div class="symbol">Rn</div><div class="name">Radón</div></article>
+
+     
+        <article class="element alkali-metal" style="grid-column: 1; grid-row: 7;"><div class="symbol">Fr</div><div class="name">Francio</div></article>
+        <article class="element alkaline-earth-metal" style="grid-column: 2; grid-row: 7;"><div class="symbol">Ra</div><div class="name">Radio</div></article>
+        <div class="element actinide placeholder" style="grid-column: 3; grid-row: 7;"></div>
+        <article class="element transition-metal" style="grid-column: 4; grid-row: 7;"><div class="symbol">Rf</div><div class="name">Rutherfordio</div></article>
+        <article class="element transition-metal" style="grid-column: 5; grid-row: 7;"><div class="symbol">Db</div><div class="name">Dubnio</div></article>
+        <article class="element transition-metal" style="grid-column: 6; grid-row: 7;"><div class="symbol">Sg</div><div class="name">Seaborgio</div></article>
+        <article class="element transition-metal" style="grid-column: 7; grid-row: 7;"><div class="symbol">Bh</div><div class="name">Bohrio</div></article>
+        <article class="element transition-metal" style="grid-column: 8; grid-row: 7;"><div class="symbol">Hs</div><div class="name">Hasio</div></article>
+        <article class="element transition-metal" style="grid-column: 9; grid-row: 7;"><div class="symbol">Mt</div><div class="name">Meitnerio</div></article>
+        <article class="element transition-metal" style="grid-column: 10; grid-row: 7;"><div class="symbol">Ds</div><div class="name">Darmstadtio</div></article>
+        <article class="element transition-metal" style="grid-column: 11; grid-row: 7;"><div class="symbol">Rg</div><div class="name">Roentgenio</div></article>
+        <article class="element transition-metal" style="grid-column: 12; grid-row: 7;"><div class="symbol">Cn</div><div class="name">Copernicio</div></article>
+        <article class="element post-transition-metal" style="grid-column: 13; grid-row: 7;"><div class="symbol">Nh</div><div class="name">Nihonio</div></article>
+        <article class="element post-transition-metal" style="grid-column: 14; grid-row: 7;"><div class="symbol">Fl</div><div class="name">Flerovio</div></article>
+        <article class="element post-transition-metal" style="grid-column: 15; grid-row: 7;"><div class="symbol">Mc</div><div class="name">Moscovio</div></article>
+        <article class="element post-transition-metal" style="grid-column: 16; grid-row: 7;"><div class="symbol">Lv</div><div class="name">Livermorio</div></article>
+        <article class="element halogen" style="grid-column: 17; grid-row: 7;"><div class="symbol">Ts</div><div class="name">Teneso</div></article>
+        <article class="element noble-gas" style="grid-column: 18; grid-row: 7;"><div class="symbol">Og</div><div class="name">Oganesón</div></article>
+
+       
+        <article class="element lanthanide" style="grid-column: 4; grid-row: 9;"><div class="symbol">La</div><div class="name">Lantano</div></article>
+        <article class="element lanthanide" style="grid-column: 5; grid-row: 9;"><div class="symbol">Ce</div><div class="name">Cerio</div></article>
+        <article class="element lanthanide" style="grid-column: 6; grid-row: 9;"><div class="symbol">Pr</div><div class="name">Praseodimio</div></article>
+        <article class="element lanthanide" style="grid-column: 7; grid-row: 9;"><div class="symbol">Nd</div><div class="name">Neodimio</div></article>
+        <article class="element lanthanide" style="grid-column: 8; grid-row: 9;"><div class="symbol">Pm</div><div class="name">Prometio</div></article>
+        <article class="element lanthanide" style="grid-column: 9; grid-row: 9;"><div class="symbol">Sm</div><div class="name">Samario</div></article>
+        <article class="element lanthanide" style="grid-column: 10; grid-row: 9;"><div class="symbol">Eu</div><div class="name">Europio</div></article>
+        <article class="element lanthanide" style="grid-column: 11; grid-row: 9;"><div class="symbol">Gd</div><div class="name">Gadolinio</div></article>
+        <article class="element lanthanide" style="grid-column: 12; grid-row: 9;"><div class="symbol">Tb</div><div class="name">Terbio</div></article>
+        <article class="element lanthanide" style="grid-column: 13; grid-row: 9;"><div class="symbol">Dy</div><div class="name">Disprosio</div></article>
+        <article class="element lanthanide" style="grid-column: 14; grid-row: 9;"><div class="symbol">Ho</div><div class="name">Holmio</div></article>
+        <article class="element lanthanide" style="grid-column: 15; grid-row: 9;"><div class="symbol">Er</div><div class="name">Erbio</div></article>
+        <article class="element lanthanide" style="grid-column: 16; grid-row: 9;"><div class="symbol">Tm</div><div class="name">Tulio</div></article>
+        <article class="element lanthanide" style="grid-column: 17; grid-row: 9;"><div class="symbol">Yb</div><div class="name">Iterbio</div></article>
+        <article class="element lanthanide" style="grid-column: 18; grid-row: 9;"><div class="symbol">Lu</div><div class="name">Lutecio</div></article>
+
+      
+        <article class="element actinide" style="grid-column: 4; grid-row: 10;"><div class="symbol">Ac</div><div class="name">Actinio</div></article>
+        <article class="element actinide" style="grid-column: 5; grid-row: 10;"><div class="symbol">Th</div><div class="name">Torio</div></article>
+        <article class="element actinide" style="grid-column: 6; grid-row: 10;"><div class="symbol">Pa</div><div class="name">Protactinio</div></article>
+        <article class="element actinide" style="grid-column: 7; grid-row: 10;"><div class="symbol">U</div><div class="name">Uranio</div></article>
+        <article class="element actinide" style="grid-column: 8; grid-row: 10;"><div class="symbol">Np</div><div class="name">Neptunio</div></article>
+        <article class="element actinide" style="grid-column: 9; grid-row: 10;"><div class="symbol">Pu</div><div class="name">Plutonio</div></article>
+        <article class="element actinide" style="grid-column: 10; grid-row: 10;"><div class="symbol">Am</div><div class="name">Americio</div></article>
+        <article class="element actinide" style="grid-column: 11; grid-row: 10;"><div class="symbol">Cm</div><div class="name">Curio</div></article>
+        <article class="element actinide" style="grid-column: 12; grid-row: 10;"><div class="symbol">Bk</div><div class="name">Berkelio</div></article>
+        <article class="element actinide" style="grid-column: 13; grid-row: 10;"><div class="symbol">Cf</div><div class="name">Californio</div></article>
+        <article class="element actinide" style="grid-column: 14; grid-row: 10;"><div class="symbol">Es</div><div class="name">Einstenio</div></article>
+        <article class="element actinide" style="grid-column: 15; grid-row: 10;"><div class="symbol">Fm</div><div class="name">Fermio</div></article>
+        <article class="element actinide" style="grid-column: 16; grid-row: 10;"><div class="symbol">Md</div><div class="name">Mendelevio</div></article>
+        <article class="element actinide" style="grid-column: 17; grid-row: 10;"><div class="symbol">No</div><div class="name">Nobelio</div></article>
+        <article class="element actinide" style="grid-column: 18; grid-row: 10;"><div class="symbol">Lr</div><div class="name">Lawrencio</div></article>
+    </main>
+
+    <aside class="legend">
+        <div class="legend-item"><div class="legend-color" style="background-color: var(--alkali-metal);"></div><span class="legend-label">Metales alcalinos</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: var(--alkaline-earth-metal);"></div><span class="legend-label">Alcalinotérreos</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: var(--lanthanide);"></div><span class="legend-label">Lantánidos</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: var(--actinide);"></div><span class="legend-label">Actínidos</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: var(--transition-metal);"></div><span class="legend-label">Metales de transición</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: var(--post-transition-metal);"></div><span class="legend-label">Otros metales</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: var(--metalloid);"></div><span class="legend-label">Metaloides</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: var(--nonmetal);"></div><span class="legend-label">No metales</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: var(--halogen);"></div><span class="legend-label">Halógenos</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: var(--noble-gas);"></div><span class="legend-label">Gases nobles</span></div>
+    </aside>
+
+</body>
+</html>

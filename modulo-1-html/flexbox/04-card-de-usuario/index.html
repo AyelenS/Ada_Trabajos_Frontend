@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Card Centrada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        
+        body {
+            background-color: #2d3748; 
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            
+            margin: 0;
+            padding: 20px; 
+            box-sizing: border-box;
+        }
+
+        .user-card {
+            background-color: #1f2937;
+            color: #ffffff;
+            border-radius: 16px;
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .user-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #4b5563;
+            margin-bottom: 20px;
+        }
+
+        .user-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .user-handle {
+            color: #9ca3af;
+            font-size: 16px;
+            margin: 4px 0 15px;
+        }
+
+        .user-bio {
+            color: #d1d5db;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0 0 30px;
+        }
+
+        .user-stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-top: 1px solid #374151;
+            border-bottom: 1px solid #374151;
+        }
+
+        .stat-item { 
+            flex: 1;
+        }
+
+        .stat-value {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 0 0 5px;
+        }
+
+        .stat-label {
+            color: #9ca3af;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .primary-button, .secondary-button {
+            flex: 1;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .primary-button {
+            background-color: #60a5fa;
+            color: #1f2937;
+        }
+
+        .primary-button:hover {
+            background-color: #93c5fd;
+            transform: translateY(-2px);
+        }
+
+        .secondary-button {
+            background-color: #374151;
+            color: #d1d5db;
+        }
+
+        .secondary-button:hover {
+            background-color: #4b5563;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="user-card">
+        <img class="user-avatar" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.elpais.com.co%2Fespeciales%2Fdia-de-la-mujer%2Fimg%2Fmujer-4.jpg&f=1&nofb=1&ipt=1a646d9edf502bfb11ef7a298c9038055b374c3c6fd89a8a408187039bb8c6e2" alt="Avatar de usuario">
+        
+        <h2 class="user-name">Maria Perez</h2>
+        <p class="user-handle">@maria_perez</p>
+        <p class="user-bio">Desarrollador Frontend apasionado por crear interfaces de usuario intuitivas y atractivas.</p>
+
+        <div class="user-stats">
+            <div class="stat-item">
+                <p class="stat-value">1,2K</p>
+                <p class="stat-label">Seguidores</p>
+            </div>
+            <div class="stat-item">
+                <p class="stat-value">450</p>
+                <p class="stat-label">Siguiendo</p>
+            </div>
+            <div class="stat-item">
+                <p class="stat-value">85</p>
+                <p class="stat-label">Proyectos</p>
+            </div>
+        </div>
+
+        <div class="user-actions">
+            <button class="primary-button">Seguir</button>
+            <button class="secondary-button">Mensaje</button>
+        </div>
+    </div>
+
+</body>
+</html>

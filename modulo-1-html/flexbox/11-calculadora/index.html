@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Neumorphic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        
+        *, *::before, *::after {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #1d1e22; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .calculator {
+            background-color: #2c2d32;
+            border-radius: 30px;
+            box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.4), 
+                        inset -5px -5px 15px rgba(0, 0, 0, 0.2),
+                        inset 5px 5px 15px rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .display {
+            background-color: #3a3f47;
+            border-radius: 20px;
+            margin: 25px;
+            padding: 25px;
+            text-align: right;
+            word-wrap: break-word;
+            word-break: break-all;
+            box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.3),
+                        inset -5px -5px 10px rgba(255, 255, 255, 0.05);
+        }
+
+        .previous-operand {
+            min-height: 32px;
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .current-operand {
+            min-height: 64px;
+            font-size: 3.5rem; 
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 0 25px 25px 25px;
+            gap: 15px; 
+        }
+
+        .btn {
+            background: #2c2d32;
+            border: none;
+            border-radius: 15px;
+            color: #e0e0e0;
+            cursor: pointer;
+            font-size: 2rem; 
+            font-weight: 600;
+            padding: 20px 0;
+            transition: all 0.1s ease-in-out;
+            box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.05),
+                        5px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:hover {
+            box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.05),
+                        3px 3px 10px rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+        }
+        
+        .btn:active {
+            box-shadow: inset -5px -5px 15px rgba(255, 255, 255, 0.05),
+                        inset 5px 5px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(1px);
+        }
+        
+        .span-two { grid-column: span 2; }
+        
+        .function { color: #ff0000; } 
+        .operator { color: #f029a6; } 
+        
+        .equals {
+            background: #f029a6;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <div class="display">
+            <div data-previous-operand class="previous-operand"></div>
+            <div data-current-operand class="current-operand">0</div>
+        </div>
+        <div class="buttons">
+            <button data-clear class="function span-two">AC</button>
+            <button data-delete class="function">DEL</button>
+            <button data-operator class="operator">÷</button>
+            <button data-number>1</button>
+            <button data-number>2</button>
+            <button data-number>3</button>
+            <button data-operator class="operator">x</button>
+            <button data-number>4</button>
+            <button data-number>5</button>
+            <button data-number>6</button>
+            <button data-operator class="operator">+</button>
+            <button data-number>7</button>
+            <button data-number>8</button>
+            <button data-number>9</button>
+            <button data-operator class="operator">-</button>
+            <button data-number>.</button>
+            <button data-number>0</button>
+            <button data-equals class="equals span-two">=</button>
+        </div>
+    </div>
+
+    <script>
+        class Calculator {
+            constructor(previousOperandTextElement, currentOperandTextElement) {
+                this.previousOperandTextElement = previousOperandTextElement;
+                this.currentOperandTextElement = currentOperandTextElement;
+                this.clear();
+            }
+
+            clear() {
+                this.currentOperand = '0';
+                this.previousOperand = '';
+                this.operation = undefined;
+            }
+
+            delete() {
+                this.currentOperand = this.currentOperand.toString().slice(0, -1);
+                if (this.currentOperand === '') {
+                    this.currentOperand = '0';
+                }
+            }
+
+            appendNumber(number) {
+                if (number === '.' && this.currentOperand.includes('.')) return;
+                if (this.currentOperand === '0' && number !== '.') {
+                    this.currentOperand = number.toString();
+                } else {
+                    this.currentOperand = this.currentOperand.toString() + number.toString();
+                }
+            }
+
+            chooseOperation(operation) {
+                if (this.currentOperand === '' || this.currentOperand === '0' && this.previousOperand === '') return;
+                if (this.previousOperand !== '') {
+                    this.compute();
+                }
+                this.operation = operation;
+                this.previousOperand = this.currentOperand;
+                this.currentOperand = '';
+            }
+
+            compute() {
+                let computation;
+                const prev = parseFloat(this.previousOperand);
+                const current = parseFloat(this.currentOperand);
+                if (isNaN(prev) || isNaN(current)) return;
+                
+                switch (this.operation) {
+                    case '+': computation = prev + current; break;
+                    case '-': computation = prev - current; break;
+                    case '*': computation = prev * current; break;
+                    case '÷': computation = prev / current; break;
+                    default: return;
+                }
+                this.currentOperand = computation;
+                this.operation = undefined;
+                this.previousOperand = '';
+            }
+
+            getDisplayNumber(number) {
+                if (number === '' || number == null) return '';
+                const stringNumber = number.toString();
+                const integerDigits = parseFloat(stringNumber.split('.')[0]);
+                const decimalDigits = stringNumber.split('.')[1];
+                let integerDisplay;
+                if (isNaN(integerDigits)) {
+                    integerDisplay = '';
+                } else {
+                    integerDisplay = integerDigits.toLocaleString('en', { maximumFractionDigits: 0 });
+                }
+                if (decimalDigits != null) {
+                    return `${integerDisplay}.${decimalDigits}`;
+                } else {
+                    return integerDisplay;
+                }
+            }
+
+            updateDisplay() {
+                this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand);
+                if (this.operation != null) {
+                    this.previousOperandTextElement.innerText = 
+                        `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`;
+                } else {
+                    this.previousOperandTextElement.innerText = '';
+                }
+            }
+        }
+
+        const numberButtons = document.querySelectorAll('[data-number]');
+        const operatorButtons = document.querySelectorAll('[data-operator]');
+        const equalsButton = document.querySelector('[data-equals]');
+        const deleteButton = document.querySelector('[data-delete]');
+        const clearButton = document.querySelector('[data-clear]');
+        const previousOperandTextElement = document.querySelector('[data-previous-operand]');
+        const currentOperandTextElement = document.querySelector('[data-current-operand]');
+
+        const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement);
+        calculator.updateDisplay();
+
+        numberButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                calculator.appendNumber(button.innerText);
+                calculator.updateDisplay();
+            });
+        });
+
+        operatorButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                calculator.chooseOperation(button.innerText);
+                calculator.updateDisplay();
+            });
+        });
+
+        equalsButton.addEventListener('click', button => {
+            calculator.compute();
+            calculator.updateDisplay();
+        });
+
+        clearButton.addEventListener('click', button => {
+            calculator.clear();
+            calculator.updateDisplay();
+        });
+
+        deleteButton.addEventListener('click', button => {
+            calculator.delete();
+            calculator.updateDisplay();
+        });
+    </script>
+</body>
+</html>

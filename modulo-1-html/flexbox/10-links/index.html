@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Datos - Versión Final</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f7fa;
+            font-family: 'Inter', sans-serif;
+            color: #263238;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        .main-container {
+            background-color: #ffffff;
+            border-radius: 24px;
+            padding: 50px;
+            width: 100%;
+            max-width: 1100px;
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+        }
+
+        .main-title {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.4;
+            margin: 0 0 B50px;
+            max-width: 600px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 60px;
+        }
+
+        .features-section {
+            flex: 1;
+            display: flex; 
+            gap: 30px; 
+        }
+
+        .features-column {
+            flex: 1; 
+            display: flex;
+            flex-direction: column;
+            gap: 40px; 
+        }
+
+        .feature-item {
+            text-align: left;
+        }
+        
+        
+        .feature-item.highlighted {
+            background-color: #ffc107;
+            border-radius: 16px;
+            padding: 25px;
+            color: #263238;
+        }
+
+        .icon-wrapper {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        
+        .feature-item:not(.highlighted) .icon-wrapper {
+            background-color: #ffc107;
+        }
+        
+
+        .feature-item.highlighted .icon-wrapper {
+            background-color: #ffffff;
+        }
+
+        .feature-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 8px;
+        }
+
+        .feature-description {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #546e7a;
+            margin: 0;
+        }
+        
+        .feature-item.highlighted .feature-description {
+            color: #424242;
+        }
+
+        .blog-sidebar {
+            background-color: #ffffff;
+            border: 1px solid #eef2f7;
+            border-radius: 16px;
+            padding: 25px;
+            min-width: 300px;
+        }
+
+        .blog-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 20px;
+        }
+
+        .blog-post {
+            padding: 15px 0;
+            border-bottom: 1px solid #eef2f7;
+        }
+        
+        .blog-post:last-child { border-bottom: none; padding-bottom: 0; }
+        .blog-post:first-of-type { padding-top: 0; }
+        
+        .blog-post.highlighted {
+            background-color: #f5f7fa;
+            border-radius: 12px;
+            margin: 10px -15px;
+            padding: 15px;
+        }
+
+        .post-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin: 0 0 6px;
+            color: #263238;
+        }
+
+        .post-author {
+            font-size: 14px;
+            font-weight: 500;
+            color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="main-container">
+        <h1 class="main-title">Programmatically or manually monitor, protect, and report your data</h1>
+
+        <div class="content-wrapper">
+            <section class="features-section">
+                <div class="features-column">
+                    <article class="feature-item highlighted">
+                        <div class="icon-wrapper">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="7.5" cy="7.5" r="2.5" fill="#ffc107"></circle><circle cx="7.5" cy="16.5" r="2.5" fill="#ffc107"></circle><circle cx="16.5" cy="16.5" r="2.5" fill="#ffc107"></circle><circle cx="16.5" cy="7.5" r="2.5" fill="#ffc107"></circle></svg>
+                        </div>
+                        <div class="text-content">
+                            <h3 class="feature-title">Collections</h3>
+                            <p class="feature-description">A Collection's fields define the structure of the Items within it.</p>
+                        </div>
+                    </article>
+                    <article class="feature-item">
+                        <div class="icon-wrapper">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5.5 16.5l4-4 3.5 3.5 5-5L21.5 14.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="3" y="4" width="18" height="16" rx="2" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect></svg>
+                        </div>
+                        <div class="text-content">
+                            <h3 class="feature-title">Images</h3>
+                            <p class="feature-description">Upload a new image set the image url to the corresponding item's field.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="features-column">
+                    <article class="feature-item">
+                        <div class="icon-wrapper">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="5" y="7" width="14" height="4" rx="1" fill="#ffffff"></rect><rect x="5" y="13" width="14" height="4" rx="1" fill="#ffffff"></rect></svg>
+                        </div>
+                        <div class="text-content">
+                            <h3 class="feature-title">Items</h3>
+                            <p class="feature-description">Beyond the user defined fields, there are a handful of additional fields.</p>
+                        </div>
+                    </article>
+                    <article class="feature-item">
+                        <div class="icon-wrapper">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M7 8l-4 4 4 4" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17 8l4 4-4 4" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                        </div>
+                        <div class="text-content">
+                            <h3 class="feature-title">API Versions</h3>
+                            <p class="feature-description">In addition to an access token, requests also must specify which version they should use.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            
+            <aside class="blog-sidebar">
+                <h2 class="blog-title">From our blog</h2>
+                <div class="blog-posts-list">
+                    <div class="blog-post">
+                        <p class="post-title">Expanding support for JCB payments</p>
+                        <p class="post-author">Jane Wagner</p>
+                    </div>
+                    <div class="blog-post highlighted">
+                        <p class="post-title">Customize to match your brand</p>
+                        <p class="post-author">Edward Bowen</p>
+                    </div>
+                    <div class="blog-post">
+                        <p class="post-title">Launch in five more European countries</p>
+                        <p class="post-author">Rosalie Chambers</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Servicios v2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+       
+        body {
+            background-color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            color: #555;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding: 60px 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .page-header {
+            margin-bottom: 60px;
+        }
+
+        .page-header h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #222;
+            margin: 0 0 10px;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            color: #888;
+            margin: 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px 60px; 
+        }
+
+        .service-item {
+            
+            display: flex;
+            align-items: flex-start; 
+            gap: 20px; 
+            text-align: left; 
+        }
+
+        .icon-wrapper {
+            background-color: #6366f1; 
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            flex-shrink: 0; 
+        }
+
+        .text-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .text-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin: 0 0 8px;
+        }
+
+        .text-content p {
+            font-size: 15px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .icon-svg {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <header class="page-header">
+            <h1>Servicios</h1>
+            <p>Estos son algunas de las cosas que ofrecemos</p>
+        </header>
+
+        <section class="services-grid">
+            
+            <article class="service-item">
+                <div class="icon-wrapper">
+                    <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                        <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"/>
+                    </svg>
+                </div>
+                <div class="text-content">
+                    <h3>Desarrollo Web</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, architecto. Quae itaque quasi delectus quia facilis?</p>
+                </div>
+            </article>
+
+            <article class="service-item">
+                <div class="icon-wrapper">
+                    <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                        <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"/>
+                    </svg>
+                </div>
+                <div class="text-content">
+                    <h3>Desarrollo Mobile</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, architecto. Quae itaque quasi delectus quia facilis?</p>
+                </div>
+            </article>
+
+            <article class="service-item">
+                <div class="icon-wrapper">
+                    <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                        <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"/>
+                    </svg>
+                </div>
+                <div class="text-content">
+                    <h3>SEO</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, architecto. Quae itaque quasi delectus quia facilis?</p>
+                </div>
+            </article>
+
+            <article class="service-item">
+                <div class="icon-wrapper">
+                    <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                        <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"/>
+                    </svg>
+                </div>
+                <div class="text-content">
+                    <h3>Consultoría</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, architecto. Quae itaque quasi delectus quia facilis?</p>
+                </div>
+            </article>
+        </section>
+    </main>
+
+</body>
+</html>

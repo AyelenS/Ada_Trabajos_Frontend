@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Paletas de Colores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background-color: #f4f7fe;
+            --text-color-primary: #1e293b;
+            --text-color-secondary: #64748b;
+            --button-color: #7c3aed;
+            --button-hover-color: #6d28d9;
+            --toast-background: #1e293b;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--background-color);
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .toast {
+            background-color: var(--toast-background);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            position: fixed;
+            top: 30px;
+            left: 50%;
+            transform: translate(-50%, -100px);
+            opacity: 0;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            transform: translate(-50%, 0);
+            opacity: 1;
+        }
+
+        h1 {
+            color: var(--text-color-primary);
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        .palette {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .color-card {
+            background-color: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .color-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .color-card.active {
+            border-color: var(--button-color);
+        }
+
+        .color-swatch {
+            width: 150px;
+            height: 180px;
+        }
+
+        .color-hex {
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-color-secondary);
+        }
+
+        .generate-btn {
+            background-color: var(--button-color);
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 15px;
+            transition: background-color 0.2s ease;
+        }
+
+        .generate-btn:hover {
+            background-color: var(--button-hover-color);
+        }
+
+        .instructions {
+            color: var(--text-color-secondary);
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .instructions code {
+            background-color: #e2e8f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .copy-hint {
+            background-color: #e2e8f0;
+            color: var(--text-color-secondary);
+            font-size: 12px;
+            padding: 8px 16px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="toast" id="toast-notification"></div>
+
+    <main class="container">
+        <h1>Color palette generator</h1>
+
+        <section class="palette" id="palette-container">
+           
+        </section>
+
+        <button class="generate-btn" id="generate-button">Generate palette</button>
+
+        <p class="instructions">Or just press the <code>Spacebar</code> to generate new palettes.</p>
+
+        <div class="copy-hint">Click to copy individual color • Press "C" to copy palette</div>
+    </main>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const paletteContainer = document.getElementById('palette-container');
+            const generateButton = document.getElementById('generate-button');
+            const toast = document.getElementById('toast-notification');
+            const colorCount = 5;
+            let currentPalette = [];
+
+            const getRandomColor = () => {
+                const letters = '0123456789ABCDEF';
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            };
+
+            const generatePalette = () => {
+                paletteContainer.innerHTML = ''; 
+                currentPalette = [];
+
+                for (let i = 0; i < colorCount; i++) {
+                    const color = getRandomColor();
+                    currentPalette.push(color);
+
+                    const colorCard = document.createElement('article');
+                    colorCard.classList.add('color-card');
+                    colorCard.dataset.color = color;
+
+                    const colorSwatch = document.createElement('div');
+                    colorSwatch.classList.add('color-swatch');
+                    colorSwatch.style.backgroundColor = color;
+
+                    const colorHex = document.createElement('div');
+                    colorHex.classList.add('color-hex');
+                    colorHex.textContent = color;
+
+                    colorCard.appendChild(colorSwatch);
+                    colorCard.appendChild(colorHex);
+                    paletteContainer.appendChild(colorCard);
+                }
+            };
+
+            const showToast = (message) => {
+                toast.textContent = message;
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 3000); 
+            };
+
+            const copyToClipboard = (text, message) => {
+                navigator.clipboard.writeText(text).then(() => {
+                    showToast(message);
+                }).catch(err => {
+                    console.error('Error al copiar: ', err);
+                    showToast('Failed to copy!');
+                });
+            };
+
+            generateButton.addEventListener('click', generatePalette);
+
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.code === 'Space' && document.activeElement.tagName !== 'BUTTON') {
+                    e.preventDefault(); // Evita el scroll
+                    generatePalette();
+                }
+            });
+
+           
+            paletteContainer.addEventListener('click', (e) => {
+                const card = e.target.closest('.color-card');
+                if (card) {
+                    
+                    document.querySelectorAll('.color-card').forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+
+                    const color = card.dataset.color;
+                    copyToClipboard(color, `Color ${color} copied to your clipboard`);
+                }
+            });
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key.toLowerCase() === 'c') {
+                    const paletteString = currentPalette.join(', ');
+                    copyToClipboard(paletteString, 'Palette copied to your clipboard');
+                }
+            });
+
+            generatePalette();
+        });
+    </script>
+
+</body>
+</html>

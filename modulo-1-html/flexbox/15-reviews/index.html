@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseñas de Clientes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background-color: #f0f2ff;
+            --card-background: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-link: #4f46e5;
+            --star-color: #facc15;
+            --progress-bar-bg: #f1f5f9;
+            --overall-rating-bg: #f8fafc;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--background-color);
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .reviews-card {
+            background-color: var(--card-background);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px -10px rgba(100, 116, 139, 0.2);
+            padding: 35px;
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        .reviews-title {
+            color: var(--text-primary);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .overall-rating {
+            background-color: var(--overall-rating-bg);
+            border-radius: 50px;
+            padding: 10px 20px;
+            margin: 0 auto 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .stars {
+            display: flex;
+            gap: 4px;
+        }
+
+        .star-icon {
+            width: 20px;
+            height: 20px;
+            fill: var(--star-color);
+        }
+
+        .rating-text {
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .total-ratings {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 35px;
+        }
+
+        .rating-breakdown {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .rating-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+        }
+
+        .rating-label {
+            color: var(--text-link);
+            font-weight: 600;
+            flex-shrink: 0;
+            width: 50px;
+            text-align: left;
+        }
+
+        .progress-bar {
+            flex-grow: 1;
+            background-color: var(--progress-bar-bg);
+            height: 10px;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .progress {
+            background-color: var(--star-color);
+            height: 100%;
+            border-radius: 50px;
+        }
+        
+        .rating-percentage {
+            color: var(--text-secondary);
+            font-weight: 600;
+            width: 35px;
+            text-align: right;
+        }
+
+        .footer-link {
+            color: var(--text-link);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="reviews-card">
+        <h2 class="reviews-title">Customer reviews</h2>
+
+        <div class="overall-rating">
+            <div class="stars">
+                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <span class="rating-text">4.7 out of 5</span>
+        </div>
+
+        <p class="total-ratings">40 customer ratings</p>
+
+        <ul class="rating-breakdown">
+            <li class="rating-row">
+                <span class="rating-label">5 star</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 84%;"></div>
+                </div>
+                <span class="rating-percentage">84%</span>
+            </li>
+            <li class="rating-row">
+                <span class="rating-label">4 star</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 9%;"></div>
+                </div>
+                <span class="rating-percentage">9%</span>
+            </li>
+            <li class="rating-row">
+                <span class="rating-label">3 star</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 4%;"></div>
+                </div>
+                <span class="rating-percentage">4%</span>
+            </li>
+            <li class="rating-row">
+                <span class="rating-label">2 star</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 2%;"></div>
+                </div>
+                <span class="rating-percentage">2%</span>
+            </li>
+            <li class="rating-row">
+                <span class="rating-label">1 star</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 1%;"></div>
+                </div>
+                <span class="rating-percentage">1%</span>
+            </li>
+        </ul>
+
+        <a href="#" class="footer-link">How do we calculate ratings?</a>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Interactivo de la Reunión</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #e2dff8 0%, #d8cde8 100%);
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .feedback-modal {
+            background-color: #1e1b34;
+            color: #e0e0e0;
+            border-radius: 16px;
+            padding: 30px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+        }
+        
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .close-icon {
+            width: 18px;
+            height: 18px;
+            stroke: #8a8a9e;
+            transition: stroke 0.2s ease;
+        }
+        
+        .close-button:hover .close-icon {
+            stroke: #ffffff;
+        }
+
+        .modal-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0 0 30px;
+            color: #ffffff;
+        }
+
+        .rating-box {
+            background-color: #2c284b;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .rating-question {
+            font-size: 16px;
+            font-weight: 500;
+            color: #d1d1e0;
+            margin: 0 0 20px;
+        }
+
+        .stars-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .star-icon {
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            stroke: #ffd700; 
+            stroke-width: 1.5px;
+            fill: none; 
+            transition: fill 0.1s ease-in-out;
+        }
+        
+        .star-icon.filled {
+            fill: #ffd700;
+        }
+
+        .rating-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #8a8a9e;
+        }
+
+        .primary-button {
+            background: linear-gradient(90deg, #8e44ad 0%, #9b59b6 100%);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            padding: 15px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: all 0.2s ease;
+        }
+
+        .primary-button:hover {
+            opacity: 0.9;
+            box-shadow: 0 6px 15px rgba(142, 68, 173, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .secondary-link {
+            background: none;
+            border: none;
+            color: #8a8a9e;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .secondary-link:hover {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="feedback-modal">
+        <button class="close-button" aria-label="Cerrar">
+            <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+
+        <h2 class="modal-title">You left the meeting</h2>
+
+        <div class="rating-box">
+            <p class="rating-question">How was the quality of the call?</p>
+            <div class="stars-container">
+                <svg class="star-icon" data-value="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg class="star-icon" data-value="2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg class="star-icon" data-value="3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg class="star-icon" data-value="4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg class="star-icon" data-value="5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <div class="rating-labels">
+                <span>Very bad</span>
+                <span>Excelente</span>
+            </div>
+        </div>
+
+        <button class="primary-button">Return Home</button>
+        <a href="#" class="secondary-link">Join again</a>
+    </div>
+
+</body>
+</html>
