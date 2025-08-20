@@ -1,0 +1,128 @@
+body {
+    background-color: #1F2124; 
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.product-card {
+    display: flex;
+    width: 100%;
+    max-width: 850px;
+    background-color: #1F2124; 
+    border-radius: 16px;
+    overflow: hidden; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+    background-color: #9B1C1C; 
+    flex: 1 1 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    transform: scale(1.2) rotate(-5deg); 
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+}
+
+.product-details {
+    flex: 1 1 50%;
+    padding: 40px;
+    color: #f9fafb; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+.product-title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.product-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap; 
+}
+
+.product-tags span {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.section-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #a0a7b5; 
+    margin: 0 0 8px 0;
+    letter-spacing: 0.5px;
+}
+
+.product-description p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #d1d5db;
+    margin: 0;
+}
+
+.price {
+    font-size: 36px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.buy-button {
+    background-color: #9B1C1C; 
+    color: #ffffff;
+    border: none;
+    border-radius: 50px; 
+    padding: 15px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: auto; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buy-button:hover {
+    background-color: #b91531; 
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .product-card {
+        flex-direction: column; 
+        max-width: 380px;
+        margin: 20px;
+    }
+
+    .product-title {
+        font-size: 28px;
+    }
+
+    .price {
+        font-size: 32px;
+    }
+
+    .product-details {
+        padding: 30px;
+    }
+}
