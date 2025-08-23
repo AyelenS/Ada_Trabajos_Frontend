@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    min-height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    display: flex; 
+    flex: 1; 
+}
+
+main {
+    flex: 3; 
+}
+
+aside {
+    flex: 1; 
+}
+
+header, nav, main, aside, footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    color: black;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+header { background-color: blue; color: white; }
+nav { background-color: red; color: white; }
+main { background-color: orange; }
+aside { background-color: lightgreen; }
+footer { background-color: green; color: white; }

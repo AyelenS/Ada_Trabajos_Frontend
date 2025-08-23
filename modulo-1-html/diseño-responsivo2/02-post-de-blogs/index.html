@@ -1,0 +1,69 @@
+<!---index.html debe contener:
+- Un título h1 que diga Mi Blog
+- Un párrafo p con lorem ipsum
+- Un título h1 que diga Últimos posts
+- 5 previews de posts de blogs, que contengan:
+- Un título h3 con el nombre del artículo
+- Un párrafo p con lorem ipsum
+- Un link que diga Seguir leyendo
+- Usar una tipografía distinta a la que viene por default.
+- Poner el texto dentro de un contenedor que actúe como columna (Darle un ancho máximo y centrarlo horizontalmente.)
+- Poner a títulos y textos distintos tamaños de letra que los que vienen por default.
+- Para el tamaño de letra, usar unidades relativas y no absolutas (em).
+- Poner dos breakpoints que modifiquen el font-size del body, de modo tal que, al ser el tamaño del texto relativo a esta medida, cambia todos
+ los tamaños en cada breakpoint.--->
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Blog</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Mi Blog</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.</p>
+
+        <h1 class="section-title">Últimos posts</h1>
+
+        <article class="post-preview">
+            <h3>Título del Artículo 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <a href="#">Seguir leyendo</a>
+        </article>
+
+        <article class="post-preview">
+            <h3>Título del Artículo 2</h3>
+            <p>Donec eu est non lacus lacinia semper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer in justo eu magna luctus suscipit. Sed non lectus.</p>
+            <a href="#">Seguir leyendo</a>
+        </article>
+
+        <article class="post-preview">
+            <h3>Título del Artículo 3</h3>
+            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <a href="#">Seguir leyendo</a>
+        </article>
+
+        <article class="post-preview">
+            <h3>Título del Artículo 4</h3>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a href="#">Seguir leyendo</a>
+        </article>
+
+        <article class="post-preview">
+            <h3>Título del Artículo 5</h3>
+            <p>Aliquam in lorem sit amet leo accumsan lacinia. Etiam non quam lacus. Scelerisque, felis eget varius consequat, leo augue ullamcorper nisi, et rhoncus lacus odio eget nunc.</p>
+            <a href="#">Seguir leyendo</a>
+        </article>
+
+    </div>
+
+</body>
+</html>

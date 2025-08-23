@@ -1,0 +1,62 @@
+<!---index.html debe contener:
+- Un título h1 con el nombre del artículo (por ejemplo Ada Lovelace)
+- Un párrafo p con lorem ipsum
+- Al menos 2 secciones con título h2 (por ejemplo, Biografía y Obra)
+- Debajo de cada título de sección, al menos 2 subsecciones con título h3 (por ejemplo, debajo de Biografía, incluir Infancia y Adultez)
+- Debajo de cada título de subsección, al menos 2 párrafos p con lorem ipsum
+- Usar una tipografía distinta a la que viene por default.
+- Poner el texto dentro de un contenedor que actúe como columna. Darle un ancho máximo y centrarlo horizontalmente.
+- Poner a títulos y textos distintos tamaños de letra que los que vienen por default.
+- Para el tamaño de letra, usar unidades relativas y no absolutas (em).
+- Poner un breakpoint que modifique el font-size del body, de modo tal que, al ser el tamaño del texto relativo a esta medida, cambien todos los tamaños en simultáneo.-->
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada Lovelace</title>
+    <link rel="stylesheet" href="styles/styles.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Ada Lovelace</h1>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+        <section>
+            <h2>Biografía</h2>
+            <section>
+                <h3>Infancia</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et est sed felis aliquet sollicitudin. Proin euismod, nulla sit amet consectetur consectetur, nisi nisl interdum turpis, ac convallis libero eros eget elit.</p>
+                <p>Donec eu est non lacus lacinia semper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer in justo eu magna luctus suscipit. Sed non lectus.</p>
+            </section>
+            <section>
+                <h3>Adultez</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </section>
+        </section>
+
+        <section>
+            <h2>Obra</h2>
+            <section>
+                <h3>Primer algoritmo</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in lorem sit amet leo accumsan lacinia. Etiam non quam lacus. Scelerisque, felis eget varius consequat, leo augue ullamcorper nisi, et rhoncus lacus odio eget nunc.</p>
+                <p>Praesent ac diam et lectus eleifend hendrerit. Cras eget sem nec dui bibendum ultrices. Duis ac velit ac leo vestibulum rhoncus. Nunc maximus, magna et ultricies elementum, est urna convallis massa, et maximus ex dui non orci.</p>
+            </section>
+            <section>
+                <h3>Visionaria de la computación</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nulla vitae elit libero, a pharetra augue.</p>
+                <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla.</p>
+            </section>
+        </section>
+    </div>
+
+</body>
+</html>
