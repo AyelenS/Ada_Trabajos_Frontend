@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard UI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+    <main class="dashboard-container">
+        <div class="left-column">
+            <div class="card create-topic-card">
+                <h2>Create a new Topic</h2>
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="Type title, or paste a link here">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group select-wrapper">
+                            <select>
+                                <option>Category</option>
+                            </select>
+                        </div>
+                        <div class="form-group select-wrapper">
+                            <select>
+                                <option>Tags</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="Enter your description here"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            Create Topic
+                        </button>
+                        <button type="button" class="btn btn-secondary">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="card solved-card">
+                <div class="icon-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="text-content">
+                    <p>Solved by <a href="#">Charlie_reid</a> in <a href="#">post #2</a></p>
+                    <p>The answer was identified. All redirects created can be found under the hosting tab of the project settings.</p>
+                </div>
+            </div>
+
+            <div class="card filter-card">
+                <div class="filter-controls">
+                    <div class="select-wrapper">
+                        <select>
+                            <option>All categories</option>
+                        </select>
+                    </div>
+                    <div class="select-wrapper">
+                        <select>
+                            <option>All tags</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-latest">Latest</button>
+                </div>
+                <ul class="category-list">
+                    <li class="category-item" style="--category-color: #4f46e5;">Community resources</li>
+                    <li class="category-item active" style="--category-color: #8b5cf6;">Design help</li>
+                    <li class="category-item" style="--category-color: #ec4899;">Publishing Help</li>
+                </ul>
+            </div>
+
+            <div class="card topic-card">
+                <div class="topic-info">
+                    <h3>Navbar Dropdown on Mobile</h3>
+                    <div class="category-tag" style="--category-color: #ec4899;">Publishing Help</div>
+                </div>
+                <div class="avatar-group">
+                    <img src="https://i.pravatar.cc/150?img=1" alt="Avatar 1">
+                    <img src="https://i.pravatar.cc/150?img=2" alt="Avatar 2">
+                    <img src="https://i.pravatar.cc/150?img=3" alt="Avatar 3">
+                </div>
+            </div>
+
+            <div class="card topic-card">
+                <div class="topic-info">
+                    <h3>Persistent Dark Mode</h3>
+                    <div class="category-tag" style="--category-color: #8b5cf6;">Design help</div>
+                </div>
+                <div class="avatar-group">
+                    <img src="https://i.pravatar.cc/150?img=4" alt="Avatar 4">
+                    <img src="https://i.pravatar.cc/150?img=5" alt="Avatar 5">
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

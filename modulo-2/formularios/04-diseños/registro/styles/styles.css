@@ -1,0 +1,163 @@
+:root {
+    --sidebar-gradient: linear-gradient(180deg, #3a7bd5, #00d2ff);
+    --button-gradient: linear-gradient(90deg, #6a82fb, #a369f7);
+    --form-bg: #ffffff;
+    --page-bg: #e0e0e0;
+    --text-dark: #333;
+    --text-light-gray: #999;
+    --text-blue: #007bff;
+    --border-color: #e0e0e0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--page-bg);
+    background-image: url('https://images.unsplash.com/photo-1590852697329-e31d45337c34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.registration-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    background: var(--form-bg);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.sidebar {
+    flex: 0 0 40%;
+    background: var(--sidebar-gradient);
+    color: white;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: linear-gradient(rgba(58, 123, 213, 0.85), rgba(0, 210, 255, 0.85)), url('https://images.unsplash.com/photo-1587132137056-bfbf0166836e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1586&q=80');
+    background-size: cover;
+    background-position: center;
+}
+.sidebar-header { font-size: 1rem; font-weight: 600; letter-spacing: 1.5px; opacity: 0.9; }
+.sidebar-content .intro-text { font-size: 2rem; margin: 0; }
+.sidebar-content h1 { font-size: 4rem; font-weight: 700; margin: 0 0 1rem 0; line-height: 1.1; }
+.sidebar-content .description { font-size: 0.9rem; line-height: 1.6; opacity: 0.8; }
+.sidebar-link { color: white; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+
+.form-panel {
+    flex: 1;
+    padding: 2rem 3rem;
+    overflow-y: auto; 
+}
+.form-panel h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 2rem 0;
+    text-align: center;
+}
+.form-panel h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-blue);
+    margin: 2rem 0 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.form-row { display: flex; gap: 1rem; }
+.input-group {
+    flex: 1;
+    position: relative;
+    margin-bottom: 1rem;
+}
+.input-group.full-width { width: 100%; }
+.input-group .icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    fill: var(--text-light-gray);
+}
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+.input-group input:not([placeholder~="Middle"]):not([placeholder~="Last"]):not([placeholder~="Promo"]):not([placeholder~="Apartment"]):not([placeholder~="Zip"]) {
+    padding-left: 3rem;
+}
+.input-group input:focus, .input-group select:focus {
+    outline: none;
+    border-color: var(--text-blue);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.15);
+}
+
+.select-group {
+    position: relative;
+}
+.select-group::after {
+    content: '▼';
+    font-size: 0.8rem;
+    color: var(--text-light-gray);
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+.select-group select { appearance: none; -webkit-appearance: none; }
+
+.form-note { font-size: 0.8rem; color: var(--text-light-gray); margin: -0.5rem 0 1rem 0; }
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+.checkbox-group label {
+    font-size: 0.85rem;
+    color: var(--text-dark);
+}
+.checkbox-group a {
+    color: var(--text-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+.submit-btn {
+    width: 100%;
+    padding: 0.85rem;
+    border: none;
+    border-radius: 4px;
+    background: var(--button-gradient);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+.submit-btn:hover { filter: brightness(1.1); }
+.login-link {
+    text-align: center;
+    font-size: 0.85rem;
+    margin-top: 1.5rem;
+    color: var(--text-dark);
+}
+.login-link a {
+    color: var(--text-blue);
+    font-weight: 600;
+    text-decoration: none;
+}

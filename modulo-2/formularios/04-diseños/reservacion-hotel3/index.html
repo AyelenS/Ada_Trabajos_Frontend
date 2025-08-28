@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Reservation Modal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+    <div class="reservation-modal">
+        <header class="modal-header">
+            <h2>NEW QUICK RESERVATION</h2>
+            <button class="close-btn" aria-label="Close">
+                <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+        </header>
+
+        <main class="modal-body">
+            <div class="form-column">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group"><label for="adults">ADULTS</label><select id="adults"><option>2</option></select></div>
+                        <div class="form-group"><label for="children">CHILDREN</label><select id="children"><option>0</option></select></div>
+                        <div class="form-group"><label for="rate-type">RATE TYPE</label><select id="rate-type"><option>Rock Rate</option></select></div>
+                        <div class="form-group"><label for="rooms">ROOMS</label><select id="rooms"><option>1</option></select></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group small"><label for="title">TITLE</label><select id="title"><option>Mr.</option></select></div>
+                        <div class="form-group large"><label for="first-name">FIRST NAME</label><input type="text" id="first-name" value="Garrett"></div>
+                        <div class="form-group large"><label for="last-name">LAST NAME</label><input type="text" id="last-name" value="Watson"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label for="email">EMAIL ADDRESS</label><input type="email" id="email" placeholder="Enter Email"></div>
+                        <div class="form-group"><label for="phone">PHONE NUMBER</label><input type="tel" id="phone" placeholder="Enter Phone Number"></div>
+                    </div>
+                    <div class="radio-group">
+                        <div class="radio-option"><input type="radio" id="single" name="booking-type"><label for="single">Single</label></div>
+                        <div class="radio-option"><input type="radio" id="group" name="booking-type" checked><label for="group">Group</label></div>
+                        <div class="radio-option"><input type="radio" id="business" name="booking-type"><label for="business">Business</label></div>
+                    </div>
+                </form>
+            </div>
+            <aside class="summary-column">
+                <div class="summary-item"><span class="label">ROOM TYPE</span><span class="value">Deluxe</span></div>
+                <div class="summary-item"><span class="label">DURATION</span><span class="value">May 28 - Jun 2</span></div>
+                <div class="summary-item"><span class="label">PRICE</span><span class="value">$45/night | Total $270</span></div>
+            </aside>
+        </main>
+
+        <footer class="modal-footer">
+            <button class="btn btn-primary">Temp Reserve</button>
+            <button class="btn btn-primary">Reserve</button>
+            <button class="btn btn-primary">Check-In</button>
+        </footer>
+    </div>
+
+</body>
+</html>

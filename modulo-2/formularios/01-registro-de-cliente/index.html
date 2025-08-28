@@ -1,0 +1,66 @@
+<!--Crear un formulario para el registro rápido para un portal web de un cliente
+
+Crear un formulario con los campos:
+- Nombre
+- Apellido
+- DNI
+- E-mail
+- Contraseña
+
+Términos y condiciones de uso:
+- Todos input debe tener su correspondiente label y debe ser del tipo adecuado. 
+- Todo input debe tener un placeholder que contenga un ejemplo del lo que se espera que se complete en dicho input. Por ejemplo, el placeholder para email puede ser adalovelace@gmail.com
+- Para el input de DNI que solo se pueda ingresar números. (Solo se podrán registrar un DNI Argentino por lo que su máximo será de 8 caracteres).
+- La contraseña debe ser mayor a 8 caracteres pero no puede exceder los 16.
+- Se debe colocar un check para saber que el usuario acepta los términos de uso de el portal.-->
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+</head>
+<body>
+
+    <div class="form-container">
+        <form id="registroForm">
+            <h2>Registro Rápido</h2>
+
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: Ada" required>
+            </div>
+
+            <div class="form-group">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Ej: Lovelace" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dni">DNI (solo números, 8 dígitos)</label>
+                <input type="text" id="dni" name="dni" placeholder="Ej: 12345678" required maxlength="8">
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="adalovelace@gmail.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Contraseña (8 a 16 caracteres)</label>
+                <input type="password" id="password" name="password" placeholder="********" required minlength="8" maxlength="16">
+            </div>
+
+            <div class="form-group terms">
+                <input type="checkbox" id="terminos" name="terminos" required>
+                <label for="terminos">Acepto los <a href="#">términos y condiciones de uso</a></label>
+            </div>
+
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+
+</body>
+</html>

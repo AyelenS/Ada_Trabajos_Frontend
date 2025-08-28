@@ -1,0 +1,170 @@
+:root {
+    --bg-color: #f0f4f8;
+    --modal-bg: #ffffff;
+    --primary-blue: #4a90e2;
+    --text-dark: #2c3e50;
+    --text-light: #a0a0a0;
+    --border-color: #e0e6ed;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.reservation-modal {
+    background-color: var(--modal-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 960px;
+    overflow: hidden;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+}
+.modal-header h2 {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: 1px;
+}
+.close-btn {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+.close-btn svg { width: 24px; height: 24px; fill: var(--text-light); }
+
+.modal-body {
+    display: grid;
+    grid-template-columns: 3fr 1fr; 
+    padding: 1.5rem 2rem;
+}
+
+.form-column {
+    padding-right: 2rem;
+    border-right: 1px solid var(--border-color);
+}
+.form-row { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+.form-group { flex: 1; }
+.form-group.small { flex-basis: 15%; } 
+.form-group.large { flex: 1; }
+.form-group label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+.form-group select {
+    appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath d='M7 10l5 5 5-5H7z' fill='%23a0a0a0'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    padding-right: 2rem;
+}
+
+.radio-group { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; }
+.radio-option { display: flex; align-items: center; gap: 0.5rem; }
+.radio-option input[type="radio"] { display: none; } 
+.radio-option label {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    position: relative;
+    padding-left: 24px; 
+}
+.radio-option label::before { 
+    content: '';
+    position: absolute;
+    left: 0; top: 50%;
+    transform: translateY(-50%);
+    width: 16px; height: 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+}
+.radio-option input[type="radio"]:checked + label::before {
+    border-color: var(--primary-blue);
+}
+.radio-option input[type="radio"]:checked + label::after { 
+    content: '';
+    position: absolute;
+    left: 5px; top: 50%;
+    transform: translateY(-50%);
+    width: 8px; height: 8px;
+    background-color: var(--primary-blue);
+    border-radius: 50%;
+}
+
+.summary-column { padding-left: 2rem; }
+.summary-item { margin-bottom: 1.5rem; }
+.summary-item .label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+.summary-item .value {
+    font-size: 1.1rem;
+    font-weight: 600; /* AJUSTE: Cambiado de 700 a 600 */
+    color: var(--text-dark);
+}
+
+.modal-footer {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+.btn {
+    border: none;
+    border-radius: 4px;
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #3a7bc8;
+}

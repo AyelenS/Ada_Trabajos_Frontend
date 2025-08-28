@@ -1,0 +1,134 @@
+:root {
+    --accent-yellow: #f5c32c;
+    --form-bg: #222222;
+    --input-bg: #f2f2f2;
+    --text-light: #ffffff;
+    --text-label: #aaaaaa;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://colorlib.com/etc/bforms/colorlib-booking-4/img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.booking-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+h1 {
+    color: var(--accent-yellow);
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+}
+
+.booking-form {
+    background-color: var(--form-bg);
+    padding: 2.5rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    flex: 1; 
+    margin-bottom: 1.5rem;
+}
+
+.form-group.full-width {
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    color: var(--text-label);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.booking-form input,
+.booking-form select {
+    width: 100%;
+    background-color: var(--input-bg);
+    border: none;
+    border-radius: 4px;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.booking-form input::placeholder {
+    color: #999;
+}
+
+.booking-form select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath d='M7 10l5 5 5-5H7z' fill='%23555'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    padding-right: 2rem;
+    cursor: pointer;
+}
+
+.form-row .date-group {
+    flex-grow: 2.5; 
+}
+.form-row .time-group {
+    flex-grow: 1; 
+}
+
+.input-with-icon {
+    position: relative;
+}
+.input-with-icon .icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    fill: #555;
+    pointer-events: none;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: var(--accent-yellow);
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: #eab420;
+}
