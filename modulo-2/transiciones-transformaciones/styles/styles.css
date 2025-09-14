@@ -1,0 +1,573 @@
+/* 
+  **********************************
+  Estilos base - NO MODIFICAR 
+  **********************************
+*/
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f5f5f5;
+}
+
+section {
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 20px 35px 40px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+
+h1 {
+  text-align: center;
+  margin: 60px 0 40px 0;
+}
+
+h2 {
+  text-align: center;
+}
+
+a,
+span:not(.consigna),
+label,
+input {
+  display: block;
+}
+
+label {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+input {
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 10px;
+  max-width: 400px;
+  width: 100%;
+  margin: 10px 0 20px;
+}
+
+.columna {
+  max-width: 700px;
+  margin: 0 15px;
+}
+
+.consigna {
+  font-weight: bold;
+}
+
+.ejercicio {
+  margin-top: 30px;
+  padding-top: 10px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.ejercicio-circulos,
+.ejercicio-no-circulos {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ejercicio-no-circulos .circulo,
+.ejercicio-circulos .circulo {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+}
+
+.ejercicio-no-circulos div {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  background-color: #e0e0e0;
+}
+
+.ejercicio-submenu ul {
+  list-style: none;
+}
+
+.cuadrado {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  background: lightcoral;
+  margin: 30px 20px 10px;
+}
+
+.contenedor-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.ejercicio-6 .boton {
+  border: 0;
+  border-radius: 5px;
+  padding: 0 20px;
+  height: 40px;
+  background-color: #ede7f6;
+  font-family: sans-serif;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.ejercicio-7 .boton {
+  border: 1px solid #ec407a;
+  border-radius: 5px;
+  padding: 0 20px;
+  height: 40px;
+  background-color: white;
+  font-family: sans-serif;
+  margin-top: 20px;
+  cursor: pointer;
+  color: #ec407a;
+}
+
+.ejercicio-8 .boton {
+  height: 40px;
+  border: 1px solid #ec407a;
+  border-radius: 5px;
+  padding: 0 20px;
+  background-color: white;
+  font-family: sans-serif;
+  margin: 20px 20px 0;
+  cursor: pointer;
+  color: #ec407a;
+  position: relative;
+}
+
+.ejercicio-8 .boton-1 {
+  overflow: hidden;
+}
+
+.ejercicio-8 .boton-1 .texto-boton {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
+  transition: 0.2s;
+}
+
+.ejercicio-8 .boton-1 .icono-boton {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
+  transition: 0.2s;
+}
+
+.ejercicio-8 .boton:hover .texto-boton {
+  left: calc(-100% - 40px);
+}
+
+.ejercicio-8 .boton:hover .icono-boton {
+  right: 0;
+}
+/* 
+  **********************************
+  Ejercicios - Resolver los ejercicios a continuación 
+  **********************************
+*/
+
+/* 
+  TIP: Recuerden que para que la transicion ocurra, el elemento tiene que tener la propiedad que transiciona definida
+*/
+
+/* 
+  Ejercicio 1
+  ----------------------------------
+  - Al hacer hover sobre los cuadrados, escalar los impares un factor de 1.2 y los pares un factor de 0.8 tanto vertical como horizontalmente, con una duración de 0.3 segundos.
+*/
+
+.ejercicio-1 .cuadrado {
+  width: 50px;
+  height: 50px;
+  background-color: steelblue;
+  margin: 10px;
+  transition: transform 0.3s ease-in-out; /* Agregamos la transición aquí para todos los cuadrados */
+}
+
+.ejercicio-1 .cuadrado:nth-child(odd):hover {
+  transform: scale(1.2);
+}
+
+.ejercicio-1 .cuadrado:nth-child(even):hover {
+  transform: scale(0.8);
+}
+
+/* Estilos para el contenedor flex (si no los tienes ya) */
+.ejercicio-1.contenedor-flex {
+  display: flex;
+  justify-content: center; /* Opcional: para centrar los cuadrados */
+  align-items: center; /* Opcional: para alinear verticalmente */
+}
+
+
+
+/* 
+  Ejercicio 2
+  ----------------------------------
+  - Al hacer hover sobre el contenedor, rotar cada cuadrado a la derecha sobre el eje Z, con una duración de 0.3 segundos. El primero debe rotar 90 grados, el 2do 180 grados, el 3ro 270 grados y el 4t0 360 grados.
+*/
+
+.ejercicio-2 .cuadrado {
+  width: 50px;
+  height: 50px;
+  background-color: darkgoldenrod; /* Cambiado el color para diferenciar */
+  margin: 10px;
+  transition: transform 0.3s ease-out; /* Transición para la rotación */
+}
+
+.ejercicio-2.contenedor-flex:hover .cuadrado:nth-child(1) {
+  transform: rotateZ(90deg);
+}
+
+.ejercicio-2.contenedor-flex:hover .cuadrado:nth-child(2) {
+  transform: rotateZ(180deg);
+}
+
+.ejercicio-2.contenedor-flex:hover .cuadrado:nth-child(3) {
+  transform: rotateZ(270deg);
+}
+
+.ejercicio-2.contenedor-flex:hover .cuadrado:nth-child(4) {
+  transform: rotateZ(360deg);
+}
+
+/* Estilos para el contenedor flex (si no los tienes ya) */
+.ejercicio-2.contenedor-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* Un poco de padding para que el hover sea más fácil */
+  border: 1px solid #eee; /* Opcional: para visualizar el área del contenedor */
+}
+
+
+/* 
+  Ejercicio 3
+  ----------------------------------
+  - Al hacer hover sobre el contenedor, rotar cada cuadrado 90 grados a la derecha sobre el eje Z, con una duración de 0.3s, teniendo cada uno un delay de 0.2 segundos con respecto al de la izquierda (es decir, 0, 0.2, 0.4 y 0.6). 
+*/
+
+.ejercicio-3 .cuadrado {
+  width: 50px;
+  height: 50px;
+  background-color: darkcyan; /* Nuevo color para diferenciar */
+  margin: 10px;
+  transition: transform 0.3s ease-out; /* Duración de la transición */
+}
+
+/* Aplicamos los delays individuales para cada cuadrado */
+.ejercicio-3 .cuadrado:nth-child(1) {
+  transition-delay: 0s;
+}
+
+.ejercicio-3 .cuadrado:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.ejercicio-3 .cuadrado:nth-child(3) {
+  transition-delay: 0.4s;
+}
+
+.ejercicio-3 .cuadrado:nth-child(4) {
+  transition-delay: 0.6s;
+}
+
+/* Al hacer hover sobre el contenedor, todos los cuadrados rotan 90 grados */
+.ejercicio-3.contenedor-flex:hover .cuadrado {
+  transform: rotateZ(90deg);
+}
+
+/* Estilos para el contenedor flex (si no los tienes ya) */
+.ejercicio-3.contenedor-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #eee;
+}
+
+
+/* 
+  Ejercicio 4
+  ----------------------------------
+  - Al hacer hover sobre el contenedor, rotar cada cuadrado 180 grados a la derecha sobre el eje Y, con una duración de 0.3s, teniendo cada uno un delay de 0.2 segundos con respecto al de la izquierda (es decir, 0, 0.2, 0.4 y 0.6) 
+*/
+
+.ejercicio-4 .cuadrado {
+  width: 50px;
+  height: 50px;
+  background-color: darkorchid; /* Nuevo color para diferenciar */
+  margin: 10px;
+  transition: transform 0.3s ease-out; /* Duración de la transición */
+}
+
+/* Aplicamos los delays individuales para cada cuadrado */
+.ejercicio-4 .cuadrado:nth-child(1) {
+  transition-delay: 0s;
+}
+
+.ejercicio-4 .cuadrado:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.ejercicio-4 .cuadrado:nth-child(3) {
+  transition-delay: 0.4s;
+}
+
+.ejercicio-4 .cuadrado:nth-child(4) {
+  transition-delay: 0.6s;
+}
+
+/* Al hacer hover sobre el contenedor, todos los cuadrados rotan 180 grados sobre el eje Y */
+.ejercicio-4.contenedor-flex:hover .cuadrado {
+  transform: rotateY(180deg);
+}
+
+/* Estilos para el contenedor flex (si no los tienes ya) */
+.ejercicio-4.contenedor-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #eee;
+  /* Para que la rotación 3D se vea mejor, el contenedor necesita perspectiva */
+  perspective: 500px;
+}
+
+/* 
+  Ejercicio 5
+  ----------------------------------
+  - Al hacer hover sobre el contenedor, convertir a cada cuadrado en un círculo con border-radius, teniendo el 1ro una duración de 0.3 segundos, el 2do de 0.6 segundos, el 3ro de 0.9 segundos y el 4to de 1.2 segundos.  
+*/
+
+.ejercicio-5 .cuadrado {
+  width: 50px;
+  height: 50px;
+  background-color: darkgreen; /* Nuevo color */
+  margin: 10px;
+  border-radius: 0; /* Aseguramos que inicie como cuadrado */
+  /* La transición ahora es para border-radius */
+  transition: border-radius ease-out;
+}
+
+/* Aplicamos las duraciones individuales para cada cuadrado */
+.ejercicio-5 .cuadrado:nth-child(1) {
+  transition-duration: 0.3s;
+}
+
+.ejercicio-5 .cuadrado:nth-child(2) {
+  transition-duration: 0.6s;
+}
+
+.ejercicio-5 .cuadrado:nth-child(3) {
+  transition-duration: 0.9s;
+}
+
+.ejercicio-5 .cuadrado:nth-child(4) {
+  transition-duration: 1.2s;
+}
+
+/* Al hacer hover sobre el contenedor, todos los cuadrados se convierten en círculos */
+.ejercicio-5.contenedor-flex:hover .cuadrado {
+  border-radius: 50%; /* 50% para convertir un cuadrado en círculo */
+}
+
+/* Estilos para el contenedor flex (si no los tienes ya) */
+.ejercicio-5.contenedor-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #eee;
+}
+
+/* 
+  Ejercicio 6
+  ----------------------------------
+  - Al hacer hover sobre el botón, cambiar el color de fondo por #d1c4e9 y al presionarlo, por #b39ddb. Darle una transición con 0.3 segundos de duración.  
+*/
+
+.ejercicio-6 .boton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f0f0f0; /* Color inicial del botón */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none; /* Elimina el borde de enfoque por defecto al hacer click */
+  transition: background-color 0.3s ease-in-out; /* Transición para el color de fondo */
+}
+
+.ejercicio-6 .boton:hover {
+  background-color: #d1c4e9; /* Color al hacer hover */
+}
+
+.ejercicio-6 .boton:active {
+  background-color: #b39ddb; /* Color al hacer click (activo) */
+}
+
+/* Estilos para el contenedor flex (si no los tienes ya) */
+.ejercicio-6.contenedor-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #eee;
+}
+
+/* 
+  Ejercicio 7
+  ----------------------------------
+  - Al hacer hover sobre el botón, cambiar el color de fondo por #ec407a y el color de texto por #000000, y al presionarlo, cambiar el color de fondo por #e91e63. Darle una transición con 0.3 segundos de duración.  
+*/
+
+.ejercicio-7 .boton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f0f0f0; /* Color inicial de fondo */
+  color: #333333; /* Color inicial del texto */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  /* Transición para el color de fondo Y el color del texto */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.ejercicio-7 .boton:hover {
+  background-color: #ec407a; /* Color de fondo al hacer hover */
+  color: #000000; /* Color del texto al hacer hover */
+}
+
+.ejercicio-7 .boton:active {
+  background-color: #e91e63; /* Color de fondo al hacer click */
+}
+
+/* Estilos para el contenedor flex (si no los tienes ya) */
+.ejercicio-7.contenedor-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #eee;
+}
+
+/* 
+  Ejercicio 8
+  ----------------------------------
+  - Replicar el efecto de hover del botón Editar, haciendo que el ícono aparezca desde arriba para el botón de Comprar y desde la izquierda para el botón de Volver.  
+*/
+
+/* Estilos generales para los botones de este ejercicio */
+.ejercicio-8 .boton {
+  position: relative; /* Esencial para posicionar el ícono dentro */
+  overflow: hidden; /* Esconde el ícono hasta que se mueva a su posición */
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  background-color: #f0f0f0;
+  margin: 0 10px; /* Espacio entre botones */
+  transition: background-color 0.3s ease-in-out; /* Transición para el color de fondo */
+  display: flex; /* Para alinear el texto y el ícono */
+  align-items: center; /* Centrar verticalmente */
+  /* Por defecto, centramos el contenido, el texto tomará el espacio central */
+  justify-content: center;
+}
+
+.ejercicio-8 .boton:hover {
+  background-color: #e0e0e0; /* Color de fondo ligero al hacer hover */
+}
+
+/* Estilos comunes para los íconos */
+.ejercicio-8 .icono-boton {
+  position: absolute; /* Permite moverlo libremente */
+  font-size: 1.2em; /* Tamaño del ícono */
+  color: #333; /* Color del ícono */
+  /* La transición se aplicará a la propiedad transform */
+  transition: transform 0.3s ease-in-out;
+}
+
+.ejercicio-8 .texto-boton {
+  /* La transición se aplicará a la propiedad transform */
+  transition: transform 0.3s ease-in-out;
+  white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+  /* Aseguramos que el texto esté inicialmente centrado */
+  transform: translateX(0);
+}
+
+/* EFECTO BOTÓN 1: EDITAR (Ícono desde la izquierda) */
+.ejercicio-8 .boton-1 .icono-boton {
+  left: 0; /* Anclamos a la izquierda del botón */
+  transform: translateX(-100%); /* Lo movemos completamente fuera por la izquierda */
+}
+
+.ejercicio-8 .boton-1:hover .icono-boton {
+  transform: translateX(5px); /* Lo movemos 5px desde el borde izquierdo */
+}
+
+.ejercicio-8 .boton-1:hover .texto-boton {
+  transform: translateX(15px); /* Movemos el texto para dejar espacio al ícono */
+}
+
+/* EFECTO BOTÓN 2: COMPRAR (Ícono desde arriba) */
+.ejercicio-8 .boton-2 {
+  /* Dar un alto fijo ayuda a que el efecto vertical sea consistente */
+  height: 45px; /* Ajusta según el padding y font-size */
+}
+
+.ejercicio-8 .boton-2 .icono-boton {
+  top: 0; /* Anclamos arriba del botón */
+  transform: translateY(-100%); /* Lo movemos completamente fuera por arriba */
+}
+
+.ejercicio-8 .boton-2:hover .icono-boton {
+  transform: translateY(5px); /* Lo movemos 5px desde el borde superior */
+}
+
+.ejercicio-8 .boton-2:hover .texto-boton {
+  transform: translateY(10px); /* Movemos el texto hacia abajo */
+}
+
+/* EFECTO BOTÓN 3: VOLVER (Ícono desde la izquierda) */
+.ejercicio-8 .boton-3 .icono-boton {
+  left: 0; /* Anclamos a la izquierda del botón */
+  transform: translateX(-100%); /* Lo movemos completamente fuera por la izquierda */
+}
+
+.ejercicio-8 .boton-3:hover .icono-boton {
+  transform: translateX(5px); /* Lo movemos 5px desde el borde izquierdo */
+}
+
+.ejercicio-8 .boton-3:hover .texto-boton {
+  transform: translateX(15px); /* Movemos el texto para dejar espacio al ícono */
+}
+
+/* Estilos para el contenedor flex (si no los tienes ya) */
+.ejercicio-8.contenedor-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #eee;
+  min-height: 80px; /* Para que el efecto de arriba no se salga */
+}

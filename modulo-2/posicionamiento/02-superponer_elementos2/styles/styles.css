@@ -1,0 +1,71 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: repeat(3, 150px);
+  gap: 15px;
+}
+
+.cell {
+  background: #ccc;
+  position: relative;
+}
+
+.red {
+  width: 90px;
+  height: 90px;
+  background: red;
+  position: absolute;
+}
+
+.green {
+  width: 45px;
+  height: 45px;
+  background: green;
+  position: absolute;
+}
+
+/* Celda 1 */
+.c1 .red { top: 0; left: 0; }
+.c1 .green { bottom: 0; right: 0; }
+
+/* Celda 2 */
+.c2 .red { bottom: 0; left: 0; }
+.c2 .green { top: 0; right: 0; }
+
+/* Celda 3 */
+.c3 .red { bottom: 0; right: 0; }
+.c3 .green { top: 0; right: 0; }
+
+/* Celda 4 */
+.c4 .red { bottom: 0; left: 0; }
+.c4 .green { bottom: 0; left: 45px; }
+
+/* Celda 5 */
+.c5 .red { top: 0; right: 0; }
+.c5 .green { bottom: 0; left: 0; }
+
+
+/* Celda 6 */
+.c6 .red { bottom: 0; right: 0; }
+.c6 .green { bottom: 45px; right: 0; }
+
+/* Celda 7 */
+.c7 .red { top: 0; left: 50%; transform: translateX(-50%); }
+.c7 .green { bottom: 0; left: 0; }
+
+
+/* Celda 8 */
+.c8 .red { bottom: 0; left: 50%; transform: translateX(-50%); }
+.c8 .green { bottom: 0; left: 50%; transform: translate(-50%, 0); }
+
+/* Celda 9 */
+.c9 .red { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.c9 .green { top: 50%; left: 50%; transform: translate(-50%, -50%); }

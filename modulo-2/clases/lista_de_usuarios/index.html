@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+</head>
+<body>
+    <main>
+    <aside class="users-widget">
+        <div class="users-widget__header">
+            <!-- Icono de usuarios (Placeholder SVG o Imagen) -->
+            <svg class="users-widget__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <h2 class="users-widget__title">Users</h2>
+        </div>
+
+        <ul class="user-list">
+            <li class="user-list__item">
+                <div class="user-list__avatar user-list__avatar--blue">
+                    <span class="user-list__initials">JT</span>
+                </div>
+                <span class="user-list__name">Juan Turner</span>
+            </li>
+            <li class="user-list__item user-list__item--active">
+                <div class="user-list__avatar user-list__avatar--green">
+                    <span class="user-list__initials">EK</span>
+                </div>
+                <span class="user-list__name">Edna Kelly</span>
+            </li>
+            <li class="user-list__item">
+                <div class="user-list__avatar user-list__avatar--purple">
+                    <span class="user-list__initials">JP</span>
+                </div>
+                <span class="user-list__name">Joshua Palmer</span>
+            </li>
+            <li class="user-list__item">
+                <div class="user-list__avatar user-list__avatar--red">
+                    <span class="user-list__initials">MF</span>
+                </div>
+                <span class="user-list__name">Micheal Ferguson</span>
+            </li>
+            <li class="user-list__item">
+                <div class="user-list__avatar user-list__avatar--light-green">
+                    <span class="user-list__initials">OF</span>
+                </div>
+                <span class="user-list__name">Olive Fleming</span>
+            </li>
+        </ul>
+
+        <div class="users-widget__footer">
+            <a href="#" class="button button--secondary">View all <span class="arrow-icon">→</span></a>
+        </div>
+    </aside>
+</main>
+</body>
+</html>

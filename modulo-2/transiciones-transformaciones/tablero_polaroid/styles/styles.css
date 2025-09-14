@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+    display: flex; /* Usamos flexbox para centrar el contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    min-height: 100vh; /* Asegura que ocupe al menos el alto completo de la pantalla */
+    overflow: hidden;
+}
+
+.gallery-container {
+    /* Eliminamos flexbox de aquí porque body ya lo maneja y las polaroids tendrán position: relative */
+    position: relative; /* Crucial para el posicionamiento relativo de las polaroids */
+    width: 90vw; /* Usa ancho del viewport para que se ajuste a la pantalla */
+    max-width: 1200px;
+    height: 70vh; /* Establece una altura para el contenedor, ajusta según necesites */
+    display: flex; /* Hacemos que el contenedor también sea flex para distribuir */
+    flex-wrap: wrap; /* Permite que las polaroids se envuelvan */
+    justify-content: center; /* Centra los elementos dentro del contenedor */
+    align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
+    
+}
+
+.polaroid {
+    background-color: #fff;
+    padding: 15px 15px 40px 15px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px; /* Margen para separar las polaroids */
+    text-align: center;
+    position: relative; /* Cambiado de absolute a relative */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.1s ease;
+    cursor: pointer;
+    width: 200px;
+    height: auto;
+    box-sizing: border-box;
+
+}
+
+.polaroid img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.polaroid figcaption {
+    font-size: 1.1em;
+    color: #333;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.gallery-container .polaroid:nth-child(1) { transform: rotate(-5deg); z-index: 1; }
+.gallery-container .polaroid:nth-child(2) { transform: rotate(8deg); z-index: 2; }
+.gallery-container .polaroid:nth-child(3) { transform: rotate(-12deg); z-index: 3; }
+.gallery-container .polaroid:nth-child(4) { transform: rotate(3deg); z-index: 4; }
+.gallery-container .polaroid:nth-child(5) { transform: rotate(10deg); z-index: 5; }
+.gallery-container .polaroid:nth-child(6) { transform: rotate(-7deg); z-index: 6; }
+.gallery-container .polaroid:nth-child(7) { transform: rotate(5deg); z-index: 7; }
+.gallery-container .polaroid:nth-child(8) { transform: rotate(15deg); z-index: 8; }
+.gallery-container .polaroid:nth-child(9) { transform: rotate(-3deg); z-index: 9; }
+.gallery-container .polaroid:nth-child(10) { transform: rotate(7deg); z-index: 10; }
+
+
+/* Efecto hover (mantener igual) */
+.polaroid:hover {
+    transform: scale(1.1) rotate(0deg) !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+}

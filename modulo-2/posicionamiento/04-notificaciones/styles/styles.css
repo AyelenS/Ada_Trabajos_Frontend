@@ -1,0 +1,53 @@
+.header {
+  background-color: #4A90E2; /* Azul similar al de la imagen */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: rgb(255, 255, 255); /* Color de los íconos */
+  font-size: 24px; /* Tamaño base para los íconos */
+}
+
+.menu-icon {
+  cursor: pointer;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* Espacio entre los grupos de íconos */
+}
+
+.icon-wrapper {
+  position: relative; /* Para posicionar la insignia en relación a este contenedor */
+  display: flex; /* Asegura que el ícono esté centrado si hay padding */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -8px; /* Ajusta para que quede encima y a la derecha */
+  right: -12px;
+  background-color: #E74C3C; /* Rojo para las notificaciones */
+  color: white;
+  font-size: 14px;
+  padding: 2px 7px;
+  border-radius: 50%; /* Para que sea circular */
+  line-height: 1; /* Asegura que el texto esté centrado verticalmente */
+  min-width: 15px; /* Para números de un solo dígito */
+  text-align: center;
+}
+
+.more-options {
+  cursor: pointer;
+  font-size: 30px; /* Un poco más grande para el icono de tres puntos */
+}
+
+.content-section {
+  background-color: #79D1C3; /* Verde de la imagen */
+  min-height: 200px; /* Para que se vea el color */
+  padding: 20px;
+  color: #333; 
+}

@@ -1,0 +1,70 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #2c2c34;  /* marco oscuro */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Contenedor principal */
+.hero {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  height: 500px;
+  background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.elespectador.com%2Fresizer%2FRARkuhZje95L9AtRt_DYfE8muZw%3D%2F1200x675%2Ffilters%3Aformat(jpeg)%2Fcloudfront-us-east-1.images.arcpublishing.com%2Felespectador%2FPX3CV6PVBVCY7NU36KPJPBPZAM.jpg&f=1&nofb=1&ipt=2e6e01c4173becf1586341918eb7999d40c7f4149bfe6a6f6f834ac13b703cf0') center/cover no-repeat;
+  overflow: hidden;
+}
+
+/* Overlay con tono marrón */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(120, 60, 0, 0.4); /* ajustá el color y opacidad */
+  z-index: 1;
+}
+
+/* Caja de texto centrada */
+.text-box {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+  border: 2px solid rgba(255,255,255,0.8); /* marco blanco */
+}
+
+/* Estilos del título */
+.text-box h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.text-box h1 span {
+  font-weight: 200; /* FRESH más fino */
+}
+
+.text-box h1 b {
+  font-weight: 700; /* BUBBA más bold */
+}
+
+/* Subtítulo */
+.text-box p {
+  margin-top: 1rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
