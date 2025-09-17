@@ -1,99 +1,62 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    padding-top: 60px; 
-    background-color: #f0f0f0;
-}
+  /* --- Reseteo Básico y Estilos del Body --- */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #f0f0f0; /* Un fondo gris claro para que destaque el menú */
+        }
 
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+        /* --- Contenedor Principal de la Navegación --- */
+        .main-nav {
+            background-color: #000000;
+        }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+        /* --- Lista Principal del Menú (ul) --- */
+        .main-nav-list {
+            list-style: none; /* Quita los puntos de la lista */
+            margin: 0;
+            padding: 0;
+            display: flex; /* Pone los elementos en línea (horizontal) */
+            justify-content: flex-end; /* Alinea los items al inicio */
+        }
 
-header {
-    position: fixed; 
-    top: 0;          
-    left: 0;         
-    width: 100%;     
-    background-color: #333; 
-    color: white;    
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000;   
-    display: flex;   
-    justify-content: flex-end; 
-    align-items: center; 
-    height: 40px; 
-}
+        /* --- Enlaces del Menú (a) --- */
+        .nav-link {
+            display: block; /* Hace que el enlace ocupe todo el espacio del 'li' */
+            padding: 16px 20px;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
 
-nav {
-    width: auto; 
-}
+        .nav-link:hover {
+            background-color: #333;
+        }
 
-.main-menu {
-    display: flex; 
-    gap: 20px;     
-}
+        /* --- Elemento que Contiene el Submenú --- */
+        /* ¡ESTA ES LA PARTE MÁS IMPORTANTE! */
+        .has-submenu {
+            position: relative; /* Crea el contexto para posicionar el submenú */
+        }
 
-.main-menu li {
-    padding: 5px 0;
-}
+        /* --- El Submenú (la lista desplegable) --- */
+        .submenu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            
+            /* Posicionamiento Absoluto */
+            position: absolute;   /* Se posiciona con respecto al '.has-submenu' */
+            left: 0;              /* Alinea el borde izquierdo del submenú con su padre */
+            top: 100%;            /* Lo coloca justo debajo del elemento padre */
+            
+            background-color: #000000;
+            min-width: 180px; /* Ancho mínimo para que quepan los items */
+            
+            /* Por defecto, el submenú está oculto */
+            display: none;
+        }
 
-.main-menu li a {
-    color: white;
-    padding: 5px 10px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.main-menu li a:hover {
-    background-color: #555;
-}
-
-
-.content {
-    margin-top: 20px; 
-    padding: 20px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-}
-
-.has-submenu {
-    position: relative; 
-}
-
-.submenu {
-    display: none; 
-    position: absolute;
-    top: 100%; 
-    left: 0;
-    background-color: #444;
-    min-width: 120px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    border-radius: 4px;
-    padding: 5px 0;
-    z-index: 1001; 
-}
-
-.has-submenu:hover .submenu {
-    display: block; 
-}
-
-.submenu li a {
-    padding: 8px 15px;
-    display: block; 
-}
-
-.submenu li a:hover {
-    background-color: #666;
-}
+        /* --- Mostrar el Submenú al pasar el ratón (hover) --- */
+        .has-submenu:hover .submenu {
+            display: block; /* Lo hace visible */
+        }

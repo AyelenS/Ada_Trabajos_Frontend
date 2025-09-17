@@ -50,8 +50,7 @@ body {
 
 /* Celda 5 */
 .c5 .red { top: 0; right: 0; }
-.c5 .green { bottom: 0; left: 0; }
-
+.c5 .green { top: 45px; right:45px; }
 
 /* Celda 6 */
 .c6 .red { bottom: 0; right: 0; }

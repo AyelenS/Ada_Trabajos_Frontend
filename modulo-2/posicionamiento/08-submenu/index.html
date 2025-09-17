@@ -1,29 +1,33 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posicionamiento de Menú</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <title>Menú con Submenú</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul class="main-menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li class="has-submenu">
-                    <a href="#">Submenu</a>
-              
-                    <ul class="submenu">
-                        <li><a href="#">Subitem 1</a></li>
-                        <li><a href="#">Subitem 2</a></li>
-                        <li><a href="#">Subitem 3</a></li>
-                        <li><a href="#">Subitem 4</a></li>
-                        <li><a href="#">Subitem 5</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+
+    <nav class="main-nav">
+        <ul class="main-nav-list">
+            <li><a href="#" class="nav-link">Home</a></li>
+            <li><a href="#" class="nav-link">About</a></li>
+            
+            <li class="has-submenu">
+                <a href="#" class="nav-link">Submenu</a>
+                
+                <ul class="submenu">
+                    <li><a href="#" class="nav-link">Sub item 1</a></li>
+                    <li><a href="#" class="nav-link">Sub item 2</a></li>
+                    <li><a href="#" class="nav-link">Sub item 3</a></li>
+                    <li><a href="#" class="nav-link">Sub item 4</a></li>
+                    <li><a href="#" class="nav-link">Sub item 5</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>

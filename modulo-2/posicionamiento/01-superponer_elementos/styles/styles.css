@@ -4,39 +4,42 @@
     border: 1px solid;
     padding: 10px;
     margin: 100px auto;
+    position: relative; 
 }
 
 .box {
     width: 150px;
     height: 150px;
-    display: inline-block;  
     text-align: center;
     line-height: 150px;
     color: white;
     font-weight: bold;
     font-size: 18px;
+    position: absolute; 
 }
+
 
 .one {
     background-color: darkgoldenrod; 
-    top: 20px;
-    left: 20px;
+    top: 0;
+    left: 0;
 }
 
 .two {
     background-color: darkcyan;
-    top: 90px;
-    left: 90px;
+    top: 100px;
+    left: 100px;
 }
 
 .three {
     background-color: darkolivegreen;
-    top: 160px;
-    left: 160px;
+    top: 200px;
+    left: 200px;
 }
 
 .four {
     background-color: darkred;
-    top: 230px;
-    left: 230px;
+    top: 300px;
+    left: 300px;
+
 }
